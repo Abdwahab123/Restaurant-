@@ -40,25 +40,27 @@ Celebrate birthdays, anniversaries, graduations, family dinners, and business me
 
 <h2>📝 Reservation Form</h2>
 
-<form action="https://formspree.io/f/mwvgjkdp" method="POST"></form>
+<form action="https://formspree.io/f/mwvgjkdp" method="POST">
+
+<input type="hidden" name="_next" value="https://abdwahab123.github.io/Restaurant-/thankyou.html">
 
 <label for="fullname"><strong>Full Name:</strong></label><br>
-<input type="text" id="fullname" name="fullname" placeholder="Enter your full name"><br><br>
+<input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br><br>
 
 <label for="email"><strong>Email Address:</strong></label><br>
-<input type="email" id="email" name="email" placeholder="Enter your email address"><br><br>
+<input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
 
 <label for="phone"><strong>Phone Number:</strong></label><br>
-<input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
 
 <label for="guests"><strong>Number of Guests:</strong></label><br>
-<input type="number" id="guests" name="guests" min="1" max="20"><br><br>
+<input type="number" id="guests" name="guests" min="1" max="20" required><br><br>
 
 <label for="date"><strong>Reservation Date:</strong></label><br>
-<input type="date" id="date" name="date"><br><br>
+<input type="date" id="date" name="date" required><br><br>
 
 <label for="time"><strong>Reservation Time:</strong></label><br>
-<input type="time" id="time" name="time"><br><br>
+<input type="time" id="time" name="time" required><br><br>
 
 <label for="requests"><strong>Special Requests:</strong></label><br>
 <textarea id="requests" name="requests" rows="4" cols="40" placeholder="Any special requests?"></textarea><br><br>

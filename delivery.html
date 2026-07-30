@@ -40,20 +40,22 @@ Every order is prepared using quality ingredients to give you the best dining ex
 
 <h2>📦 Order Your Meal</h2>
 
-<form action="https://formspree.io/f/mwvgjkdp" method="POST"></form>
+<form action="https://formspree.io/f/mwvgjkdp" method="POST">
+
+<input type="hidden" name="_next" value="https://abdwahab123.github.io/Restaurant-/thankyou.html">
 
 <label for="name"><strong>Full Name:</strong></label><br>
-<input type="text" id="name" name="name" placeholder="Enter your full name"><br><br>
+<input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
 
 <label for="phone"><strong>Phone Number:</strong></label><br>
-<input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
 
 <label for="address"><strong>Delivery Address:</strong></label><br>
 <textarea id="address" name="address" rows="4" cols="40"
-placeholder="Enter your delivery address"></textarea><br><br>
+placeholder="Enter your delivery address" required></textarea><br><br>
 
 <label for="meal"><strong>Select Your Meal:</strong></label><br>
-<select id="meal" name="meal">
+<select id="meal" name="meal" required>
     <option>Jollof Rice with Chicken</option>
     <option>Special Pizza</option>
     <option>Classic Beef Burger</option>
@@ -62,7 +64,7 @@ placeholder="Enter your delivery address"></textarea><br><br>
 </select><br><br>
 
 <label for="quantity"><strong>Quantity:</strong></label><br>
-<input type="number" id="quantity" name="quantity" min="1" max="10"><br><br>
+<input type="number" id="quantity" name="quantity" min="1" max="10" required><br><br>
 
 <input type="submit" value="Place Order">
 

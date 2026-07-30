@@ -37,22 +37,24 @@ alt="Restaurant Building" width="320">
 
 <h2>✉️ Send Us a Message</h2>
 
-<form action="https://formspree.io/f/mwvgjkdp" method="POST"></form>
+<form action="https://formspree.io/f/mwvgjkdp" method="POST">
+
+<input type="hidden" name="_next" value="https://abdwahab123.github.io/Restaurant-/thankyou.html">
 
 <label for="fullname"><strong>Full Name:</strong></label><br>
-<input type="text" id="fullname" name="fullname" placeholder="Enter your full name"><br><br>
+<input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br><br>
 
 <label for="email"><strong>Email Address:</strong></label><br>
-<input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+<input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
 
 <label for="phone"><strong>Phone Number:</strong></label><br>
-<input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
 
 <label for="subject"><strong>Subject:</strong></label><br>
-<input type="text" id="subject" name="subject" placeholder="Enter message subject"><br><br>
+<input type="text" id="subject" name="subject" placeholder="Enter message subject" required><br><br>
 
 <label for="message"><strong>Your Message:</strong></label><br>
-<textarea id="message" name="message" rows="5" cols="40" placeholder="Type your message here..."></textarea><br><br>
+<textarea id="message" name="message" rows="5" cols="40" placeholder="Type your message here..." required></textarea><br><br>
 
 <input type="submit" value="Send Message">
 
