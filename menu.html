@@ -3,132 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Tasty Bites - Menu</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<h1>🍽️ Our Menu</h1>
+    <!-- =========================
+         MENU HEADER
+    ========================== -->
 
-<p>
-Discover our delicious selection of freshly prepared meals. Every dish is made with quality ingredients to give you an unforgettable dining experience.
-</p>
+    <h1>🍽️ Our Menu</h1>
 
-<hr>
+    <p>
+        Discover our delicious selection of freshly prepared meals.
+        Every dish is made with quality ingredients to give you
+        an unforgettable dining experience.
+    </p>
 
-<h2>🍚 Jollof Rice with Grilled Chicken</h2>
+    <hr>
 
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600"
-alt="Jollof Rice" width="300">
 
-<p>
-Our signature Nigerian Jollof Rice served with juicy grilled chicken, fresh salad, and a chilled soft drink.
-</p>
+    <!-- =========================
+         MENU SEARCH
+    ========================== -->
 
-<p><strong>Price:</strong> ₦4,500</p>
+    <section>
 
-<hr>
+        <h2>🔎 Find Your Favourite Meal</h2>
 
-<h2>🍕 Special Cheese Pizza</h2>
+        <input
+            type="text"
+            id="menuSearch"
+            placeholder="Search for food..."
+        >
 
-<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600"
-alt="Pizza" width="300">
+    </section>
 
-<p>
-Freshly baked pizza loaded with mozzarella cheese, vegetables, pepperoni, and our special homemade sauce.
-</p>
+    <hr>
 
-<p><strong>Price:</strong> ₦6,000</p>
 
-<hr>
+    <!-- =========================
+         FOOD MENU
+    ========================== -->
 
-<h2>🍔 Classic Beef Burger</h2>
+    <section class="menu-container">
 
-<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600"
-alt="Burger" width="300">
 
-<p>
-A juicy beef burger served with crispy fries and a refreshing soft drink.
-</p>
+        <!-- JOLLOF RICE -->
+        <div class="menu-item" data-category="rice">
 
-<p><strong>Price:</strong> ₦4,000</p>
+            <h2>🍚 Jollof Rice with Grilled Chicken</h2>
 
-<hr>
+            <img
+                src="YOUR-JOLLOF-RICE-IMAGE-HERE"
+                alt="Jollof Rice with Grilled Chicken"
+                width="300"
+            >
 
-<h2>🌯 Chicken Shawarma</h2>
+            <p>
+                Our signature Nigerian Jollof Rice served with juicy
+                grilled chicken, fresh salad, and a chilled soft drink.
+            </p>
 
-<img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600"
-alt="Chicken Shawarma" width="300">
+            <p>
+                <strong>Price: ₦4,500</strong>
+            </p>
 
-<p>
-Soft tortilla wrap filled with grilled chicken, fresh vegetables, and creamy garlic sauce.
-</p>
+            <button
+                class="add-to-cart"
+                data-name="Jollof Rice with Grilled Chicken"
+                data-price="4500">
+                🛒 Add to Order
+            </button>
 
-<p><strong>Price:</strong> ₦3,500</p>
+        </div>
 
-<hr>
+        <hr>
 
-<h2>🍗 Grilled Chicken & Fries</h2>
 
-<img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600"
-alt="Grilled Chicken" width="300">
+        <!-- PIZZA -->
+        <div class="menu-item" data-category="pizza">
 
-<p>
-Tender grilled chicken served with crispy fries and a side of fresh vegetables.
-</p>
+            <h2>🍕 Special Cheese Pizza</h2>
 
-<p><strong>Price:</strong> ₦5,500</p>
+            <img
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600"
+                alt="Special Cheese Pizza"
+                width="300"
+            >
 
-<hr>
+            <p>
+                Freshly baked pizza loaded with mozzarella cheese,
+                vegetables, pepperoni, and our special homemade sauce.
+            </p>
 
-<h2>🥤 Refreshing Drinks</h2>
+            <p>
+                <strong>Price: ₦6,000</strong>
+            </p>
 
-<p>🥤 Coca-Cola - ₦700</p>
-<p>🥤 Fanta - ₦700</p>
-<p>🥤 Sprite - ₦700</p>
-<p>🧃 Fresh Orange Juice - ₦1,500</p>
-<p>🥤 Bottled Water - ₦500</p>
+            <button
+                class="add-to-cart"
+                data-name="Special Cheese Pizza"
+                data-price="6000">
+                🛒 Add to Order
+            </button>
 
-<hr>
+        </div>
 
-<h2>⭐ Why Our Menu?</h2>
+        <hr>
 
-<p>✔ Fresh ingredients every day.</p>
-<p>✔ Affordable prices.</p>
-<p>✔ Delicious local and international dishes.</p>
-<p>✔ Meals prepared by experienced chefs.</p>
 
-<hr>
+        <!-- BURGER -->
+        <div class="menu-item" data-category="burger">
 
-<h2>🧭 Quick Navigation</h2>
+            <h2>🍔 Classic Beef Burger</h2>
 
-<nav>
+            <img
+                src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600"
+                alt="Classic Beef Burger"
+                width="300"
+            >
 
-<a href="index.html">🏠 Home</a>
-<a href="about.html">📖 About</a>
-<a href="menu.html">🍽 Menu</a>
-<a href="services.html">🛎 Services</a>
-<a href="gallery.html">📸 Gallery</a>
-<a href="reservation.html">📅 Reservation</a>
-<a href="delivery.html">🚚 Delivery</a>
-<a href="team.html">👨‍🍳 Team</a>
-<a href="testimonials.html">⭐ Reviews</a>
-<a href="contact.html">📞 Contact</a>
-<a href="faq.html">❓ FAQ</a>
+            <p>
+                A juicy beef burger served with crispy fries
+                and a refreshing soft drink.
+            </p>
 
-</nav>
-<hr>
+            <p>
+                <strong>Price: ₦4,000</strong>
+            </p>
 
-<p>
-<a href="index.html">⬅ Back to Home</a>
-</p>
+            <button
+                class="add-to-cart"
+                data-name="Classic Beef Burger"
+                data-price="4000">
+                🛒 Add to Order
+            </button>
 
-<hr>
+        </div>
 
-<footer>
-    <p>&copy; 2026 Tasty Bites Restaurant. All Rights Reserved.</p>
-    <p>Designed by Abdul Wahab</p>
-</footer>
+        <hr>
+
+
+        <!-- SHAWARMA -->
+        <div class="menu-item" data-category="shawarma">
+
+            <h2>🌯 Chicken Shawarma</h2>
+
+            <img
+                src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600"
+                alt="Chicken Shawarma"
+                width="300"
+            >
+
+            <p>
+                Soft tortilla wrap filled with grilled chicken,
+                fresh vegetables, and creamy garlic sauce.
+            </p>
+
+            <p>
+                <strong>Price: ₦3,500</strong>
+            </p>
+
+            <button
+                class="add-to-cart"
+                data-name="Chicken Shawarma"
+                data-price="3500">
+                🛒 Add to Order
+            </button>
+
+        </div>
+
+        <hr>
+
+
+        <!-- GRILLED CHICKEN -->
+        <div class="menu-item" data-category="chicken">
+
+            <h2>🍗 Grilled Chicken & Fries</h2>
+
+            <img
+                src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600"
+                alt="Grilled Chicken and Fries"
+                width="300"
+            >
+
+            <p>
+                Tender grilled chicken served with crispy fries
+                and a side of fresh vegetables.
+            </p>
+
+            <p>
+                <strong>Price: ₦5,500</strong>
+            </p>
+
+            <button
+                class="add-to-cart"
+                data-name="Grilled Chicken & Fries"
+                data-price="5500">
+                🛒 Add to Order
+            </button>
+
+        </div>
+
+    </section>
+
+    <hr>
+
+
+    <!-- =========================
+         DRINKS
+    ========================== -->
+
+    <section>
+
+        <h2>🥤 Refreshing Drinks</h2>
+
+        <div class="menu-item" data-category="drinks">
+
+            <h3>🥤 Coca-Cola</h3>
+            <p>₦700</p>
+
+            <button
+                class="add-to-cart"
+                data-name="Coca-Cola"
+                data-price="700">
+                🛒 Add to Order
+            </button>
+
+        </div>
+
+
+        <div class="menu-item" data-category="drinks">
+
+            <h3>🥤 Fanta</h3>
+            <p>₦700</p>
+
+            <button
+                class="add-to-cart"
+                data-name="Fanta"
+                data-price="700">
+                🛒 Add to Order
+            </button>
+
+        </div>
+
+
+        <div class="menu-item" data-category="drinks">
+
+            <h3>🥤 Sprite</h3>
+            <p>₦700</p>
+
+            <button
+                class="add-to-cart"
+                data-name="Sprite"
+                data-price="700">
+                🛒 Add to Order
+            </button>
+
+        </div>
+
+
+        <div class="menu-item" data-category="drinks">
+
+            <h3>🧃 Fresh Orange Juice</h3>
+            <p>₦1,500</p>
+
+            <button
+                class="add-to-cart"
+                data-name="Fresh Orange Juice"
+                data-price="1500">
+                🛒 Add to Order
+            </button>
+
+        </div>
+
+
+        <div class="menu-item" data-category="drinks">
+
+            <h3>🥤 Bottled Water</h3>
+            <p>₦500</p>
+
+            <button
+                class="add-to-cart"
+                data-name="Bottled Water"
+                data-price="500">
+                🛒 Add to Order
+            </button>
+
+        </div>
+
+    </section>
+
+    <hr>
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+
+    <section class="cart-section" id="cart">
+
+        <h2>🛒 Your Order</h2>
+
+        <div id="cartItems">
+
+            <p>Your cart is empty.</p>
+
+        </div>
+
+
+        <div class="cart-summary">
+
+            <h3>
+                Total:
+                <span id="cartTotal">₦0</span>
+            </h3>
+
+            <button
+                type="button"
+                id="clearCart">
+                🗑️ Clear Cart
+            </button>
+
+            <a
+                href="checkout.html"
+                class="checkout-btn">
+                ✅ Proceed to Checkout
+            </a>
+
+        </div>
+
+    </section>
+
+    <hr>
+
+
+    <!-- =========================
+         WHY OUR MENU
+    ========================== -->
+
+    <section>
+
+        <h2>⭐ Why Our Menu?</h2>
+
+        <p>✔ Fresh ingredients every day.</p>
+
+        <p>✔ Affordable prices.</p>
+
+        <p>✔ Delicious local and international dishes.</p>
+
+        <p>✔ Meals prepared by experienced chefs.</p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- =========================
+         QUICK NAVIGATION
+    ========================== -->
+
+    <h2>🧭 Quick Navigation</h2>
+
+    <nav>
+
+        <a href="index.html">🏠 Home</a>
+
+        <a href="about.html">📖 About</a>
+
+        <a href="menu.html">🍽 Menu</a>
+
+        <a href="services.html">🛎 Services</a>
+
+        <a href="gallery.html">📸 Gallery</a>
+
+        <a href="reservation.html">📅 Reservation</a>
+
+        <a href="delivery.html">🚚 Delivery</a>
+
+        <a href="team.html">👨‍🍳 Team</a>
+
+        <a href="testimonials.html">⭐ Reviews</a>
+
+        <a href="contact.html">📞 Contact</a>
+
+        <a href="faq.html">❓ FAQ</a>
+
+    </nav>
+
+    <hr>
+
+
+    <!-- BACK TO HOME -->
+
+    <p>
+        <a href="index.html">⬅ Back to Home</a>
+    </p>
+
+    <hr>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Tasty Bites Restaurant.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed by Abdul Wahab
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="/Restaurant-/css/javascript/java.js"></script>
 
 </body>
+
 </html>

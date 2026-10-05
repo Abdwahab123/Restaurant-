@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Tasty Bites</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <!-- HEADER -->
+
+    <header>
+
+        <h1>🍽️ Tasty Bites Restaurant</h1>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="menu.html">Menu</a>
+
+            <a href="gallery.html">Gallery</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+    <!-- CHECKOUT -->
+
+    <main class="checkout-page">
+
+        <h2>🛒 Checkout</h2>
+
+        <p>Complete your details to place your order.</p>
+
+        <!-- ORDER SUMMARY -->
+
+        <section class="checkout-section">
+
+            <h3>🍔 Your Order</h3>
+
+            <div id="checkoutItems">
+
+                <p>Loading your order...</p>
+
+            </div>
+
+            <div class="checkout-total">
+
+                <h3>
+
+                    Total:
+
+                    <span id="checkoutTotal">₦0</span>
+
+                </h3>
+
+            </div>
+
+        </section>
+
+        <!-- CUSTOMER DETAILS -->
+
+        <section class="checkout-section">
+
+            <h3>👤 Customer Details</h3>
+
+            <form
+                id="checkoutForm"
+                action="https://formspree.io/f/mwvgjkdp"
+                method="POST"
+>
+                <input type="hidden" name="order" id="orderDetails">
+
+                <input type="hidden" name="total" id="orderTotal"> 
+
+                <input type="hidden" name="_subject" value="🛒 New Tasty Bites Order">
+
+                <label for="customerName">
+
+                    Full Name
+
+                </label>
+
+                <input
+
+                    type="text"
+
+                    id="customerName"
+
+                    name="customerName"
+
+                    placeholder="Enter your full name"
+
+                    required
+
+                >
+
+                <label for="customerPhone">
+
+                    Phone Number
+
+                </label>
+
+                <input
+
+                    type="tel"
+
+                    id="customerPhone"
+
+                    name="customerPhone"
+
+                    placeholder="08012345678"
+
+                    required
+
+                >
+
+                <label for="deliveryAddress">
+
+                    Delivery Address
+
+                </label>
+
+                <textarea
+
+                    id="deliveryAddress"
+
+                    name="deliveryAddress"
+
+                    placeholder="Enter your delivery address"
+
+                    rows="4"
+
+                    required
+
+                ></textarea>
+
+                <label for="orderNote">
+
+                    Order Note (Optional)
+
+                </label>
+
+                <textarea
+
+                    id="orderNote"
+
+                    name="orderNote"
+
+                    placeholder="Any special instruction?"
+
+                    rows="3"
+
+                ></textarea>
+
+                <button
+
+                    type="submit"
+
+                    class="checkout-btn"
+
+                >
+
+                    ✅ Place Order
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Tasty Bites Restaurant. All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="/Restaurant-/css/javascript/java.js"></script>
+
+    <!-- CHECKOUT JAVASCRIPT -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Get cart from localStorage
+
+            const cart =
+
+                JSON.parse(localStorage.getItem("tastyBitesCart")) || [];
+
+            const checkoutItems =
+
+                document.getElementById("checkoutItems");
+
+            const checkoutTotal =
+
+                document.getElementById("checkoutTotal");
+
+            // If cart is empty
+
+            if (cart.length === 0) {
+
+                checkoutItems.innerHTML = `
+
+                    <p>Your cart is empty.</p>
+
+                    <a href="menu.html">
+
+                        🍔 Go Back to Menu
+
+                    </a>
+
+                `;
+
+                checkoutTotal.textContent = "₦0";
+
+                return;
+
+            }
+
+            let total = 0;
+
+            checkoutItems.innerHTML = "";
+
+            // Display every item
+
+            cart.forEach(function (item) {
+
+                const quantity = item.quantity || 1;
+
+                const itemTotal =
+
+                    item.price * quantity;
+
+                total += itemTotal;
+
+                const itemElement =
+
+                    document.createElement("div");
+
+                itemElement.className =
+
+                    "checkout-item";
+
+                itemElement.innerHTML = `
+
+                    <div>
+
+                        <strong>${item.name}</strong>
+
+                        <p>
+
+                            Quantity: ${quantity}
+
+                        </p>
+
+                    </div>
+
+                    <strong>
+
+                        ₦${itemTotal.toLocaleString()}
+
+                    </strong>
+
+                `;
+
+                checkoutItems.appendChild(itemElement);
+
+            });
+
+            // Display total
+
+            checkoutTotal.textContent =
+
+                `₦${total.toLocaleString()}`;
+
+            // Place order
+
+            const checkoutForm =
+
+                document.getElementById("checkoutForm");
+
+            checkoutForm.addEventListener(
+
+                "submit",
+
+                function (event) {
+
+                    event.preventDefault();
+
+                    const name =
+
+                        document.getElementById(
+
+                            "customerName"
+
+                        ).value;
+
+                    const phone =
+
+                        document.getElementById(
+
+                            "customerPhone"
+
+                        ).value;
+
+                    const address =
+
+                        document.getElementById(
+
+                            "deliveryAddress"
+
+                        ).value;
+
+                    const note =
+
+                        document.getElementById(
+
+                            "orderNote"
+
+                        ).value;
+
+                    alert(
+
+                        `Thank you ${name}! 🎉\n\n` +
+
+                        `Your order has been received.\n\n` +
+
+                        `Total: ₦${total.toLocaleString()}`
+
+                    );
+
+                    // Clear cart after order
+
+                    localStorage.removeItem(
+
+                        "tastyBitesCart"
+
+                    );
+
+                    // Go to thank-you page
+
+                    window.location.href =
+
+                        "thankyou.html";
+
+                }
+
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+</body>
+</html>
