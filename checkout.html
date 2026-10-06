@@ -9,7 +9,7 @@
     <link rel="icon" href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png">
 </head>
 <body>
-      <!-- HEADER -->
+         <!-- HEADER -->
 
     <header>
 
@@ -57,7 +57,11 @@
 
                     Total:
 
-                    <span id="checkoutTotal">₦0</span>
+                    <span id="checkoutTotal">
+
+                        ₦0
+
+                    </span>
 
                 </h3>
 
@@ -81,7 +85,7 @@
 
             >
 
-                <!-- Hidden order information -->
+                <!-- HIDDEN ORDER INFORMATION -->
 
                 <input
 
@@ -113,7 +117,7 @@
 
                 >
 
-                <!-- NAME -->
+                <!-- FULL NAME -->
 
                 <label for="customerName">
 
@@ -157,6 +161,28 @@
 
                 >
 
+                <!-- EMAIL -->
+
+                <label for="customerEmail">
+
+                    Email Address
+
+                </label>
+
+                <input
+
+                    type="email"
+
+                    id="customerEmail"
+
+                    name="customerEmail"
+
+                    placeholder="you@example.com"
+
+                    required
+
+                >
+
                 <!-- ADDRESS -->
 
                 <label for="deliveryAddress">
@@ -179,7 +205,7 @@
 
                 ></textarea>
 
-                <!-- NOTE -->
+                <!-- ORDER NOTE -->
 
                 <label for="orderNote">
 
@@ -199,17 +225,19 @@
 
                 ></textarea>
 
-                <!-- SUBMIT -->
+                <!-- PAYMENT BUTTON -->
 
                 <button
 
                     type="submit"
 
+                    id="payButton"
+
                     class="checkout-btn"
 
                 >
 
-                    ✅ Place Order
+                    💳 Pay Now with Paystack
 
                 </button>
 
@@ -225,145 +253,137 @@
 
         <p>
 
-            © 2026 Tasty Bites Restaurant. All Rights Reserved.
+            © 2026 Tasty Bites Restaurant.
+
+            All Rights Reserved.
 
         </p>
 
     </footer>
 
-    <!-- MAIN JAVASCRIPT -->
+    <!-- PAYSTACK V2 -->
 
-    <script src="/Restaurant-/css/javascript/java.js"></script>
+    <script src="https://js.paystack.co/v2/inline.js"></script>
 
     <!-- CHECKOUT JAVASCRIPT -->
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener(
 
-            // Get cart
+            "DOMContentLoaded",
 
-            const cart =
+            function () {
 
-                JSON.parse(localStorage.getItem("tastyBitesCart")) || [];
+                // ==========================================
 
-            // Get elements
+                // GET CART
 
-            const checkoutItems =
+                // ==========================================
 
-                document.getElementById("checkoutItems");
+                const cart =
 
-            const checkoutTotal =
+                    JSON.parse(
 
-                document.getElementById("checkoutTotal");
+                        localStorage.getItem(
 
-            const checkoutForm =
+                            "tastyBitesCart"
 
-                document.getElementById("checkoutForm");
+                        )
 
-            // If cart is empty
+                    ) || [];
 
-            if (cart.length === 0) {
+                // ==========================================
 
-                checkoutItems.innerHTML = `
+                // GET ELEMENTS
 
-                    <p>Your cart is empty.</p>
+                // ==========================================
 
-                    <a href="menu.html">
+                const checkoutItems =
 
-                        🍔 Go Back to Menu
+                    document.getElementById(
 
-                    </a>
+                        "checkoutItems"
 
-                `;
+                    );
 
-                checkoutTotal.textContent = "₦0";
+                const checkoutTotal =
 
-                return;
+                    document.getElementById(
 
-            }
+                        "checkoutTotal"
 
-            // Calculate total
+                    );
 
-            let total = 0;
+                const checkoutForm =
 
-            checkoutItems.innerHTML = "";
+                    document.getElementById(
 
-            // Display cart items
+                        "checkoutForm"
 
-            cart.forEach(function (item) {
+                    );
 
-                const quantity =
+                const payButton =
 
-                    item.quantity || 1;
+                    document.getElementById(
 
-                const itemTotal =
+                        "payButton"
 
-                    item.price * quantity;
+                    );
 
-                total += itemTotal;
+                // ==========================================
 
-                const itemElement =
+                // CHECK EMPTY CART
 
-                    document.createElement("div");
+                // ==========================================
 
-                itemElement.className =
+                if (cart.length === 0) {
 
-                    "checkout-item";
-
-                itemElement.innerHTML = `
-
-                    <div>
-
-                        <strong>
-
-                            ${item.name}
-
-                        </strong>
+                    checkoutItems.innerHTML = `
 
                         <p>
 
-                            Quantity: ${quantity}
+                            Your cart is empty.
 
                         </p>
 
-                    </div>
+                        <a href="menu.html">
 
-                    <strong>
+                            🍔 Go Back to Menu
 
-                        ₦${itemTotal.toLocaleString()}
+                        </a>
 
-                    </strong>
+                    `;
 
-                `;
+                    checkoutTotal.textContent =
 
-                checkoutItems.appendChild(itemElement);
+                        "₦0";
 
-            });
+                    payButton.disabled = true;
 
-            // Display total
+                    return;
 
-            checkoutTotal.textContent =
+                }
 
-                `₦${total.toLocaleString()}`;
+                // ==========================================
 
-            // Handle Place Order
+                // CALCULATE TOTAL
 
-            checkoutForm.addEventListener(
+                // ==========================================
 
-                "submit",
+                let total = 0;
 
-                async function (event) {
+                checkoutItems.innerHTML = "";
 
-                    // Stop normal form submission
+                // ==========================================
 
-                    event.preventDefault();
+                // DISPLAY CART ITEMS
 
-                    // Create order details
+                // ==========================================
 
-                    let orderDetails = "";
+                cart.forEach(
 
-                    cart.forEach(function (item) {
+                    function (item) {
 
                         const quantity =
 
@@ -373,113 +393,553 @@
 
                             item.price * quantity;
 
-                        orderDetails +=
+                        total += itemTotal;
 
-                            `${item.name} x ${quantity} = ₦${itemTotal.toLocaleString()}\n`;
+                        const itemElement =
 
-                    });
+                            document.createElement(
 
-                    // Put order information into hidden fields
-
-                    document.getElementById(
-
-                        "orderDetails"
-
-                    ).value = orderDetails;
-
-                    document.getElementById(
-
-                        "orderTotal"
-
-                    ).value =
-
-                        `₦${total.toLocaleString()}`;
-
-                    // Create Formspree data
-
-                    const formData =
-
-                        new FormData(checkoutForm);
-
-                    try {
-
-                        // Send to Formspree
-
-                        const response =
-
-                            await fetch(
-
-                                checkoutForm.action,
-
-                                {
-
-                                    method: "POST",
-
-                                    body: formData,
-
-                                    headers: {
-
-                                        "Accept":
-
-                                            "application/json"
-
-                                    }
-
-                                }
+                                "div"
 
                             );
 
-                        // Successful
+                        itemElement.className =
 
-                        if (response.ok) {
+                            "checkout-item";
 
-                            // Clear cart
+                        itemElement.innerHTML = `
 
-                            localStorage.removeItem(
+                            <div>
 
-                                "tastyBitesCart"
+                                <strong>
 
-                            );
+                                    ${item.name}
 
-                            // Go to thank-you page
+                                </strong>
 
-                            window.location.href =
+                                <p>
 
-                                "thankyou.html";
+                                    Quantity:
 
-                        }
+                                    ${quantity}
 
-                        // Failed
+                                </p>
 
-                        else {
+                            </div>
 
-                            alert(
+                            <strong>
 
-                                "❌ Your order could not be sent. Please try again."
+                                ₦${itemTotal.toLocaleString()}
 
-                            );
+                            </strong>
 
-                        }
+                        `;
 
-                    }
+                        checkoutItems.appendChild(
 
-                    // Internet/Formspree error
-
-                    catch (error) {
-
-                        alert(
-
-                            "❌ There was a problem connecting to Formspree. Please check your internet connection."
+                            itemElement
 
                         );
 
                     }
 
-                }
+                );
 
-            );
+                // ==========================================
 
-        });
+                // DISPLAY TOTAL
+
+                // ==========================================
+
+                checkoutTotal.textContent =
+
+                    `₦${total.toLocaleString()}`;
+
+                // ==========================================
+
+                // PAYMENT
+
+                // ==========================================
+
+                checkoutForm.addEventListener(
+
+                    "submit",
+
+                    async function (event) {
+
+                        // Stop normal form submission
+
+                        event.preventDefault();
+
+                        // ==================================
+
+                        // GET CUSTOMER INFORMATION
+
+                        // ==================================
+
+                        const customerName =
+
+                            document.getElementById(
+
+                                "customerName"
+
+                            ).value.trim();
+
+                        const customerPhone =
+
+                            document.getElementById(
+
+                                "customerPhone"
+
+                            ).value.trim();
+
+                        const customerEmail =
+
+                            document.getElementById(
+
+                                "customerEmail"
+
+                            ).value.trim();
+
+                        // ==================================
+
+                        // CHECK EMAIL
+
+                        // ==================================
+
+                        if (!customerEmail) {
+
+                            alert(
+
+                                "❌ Please enter your email address."
+
+                            );
+
+                            return;
+
+                        }
+
+                        // ==================================
+
+                        // CREATE ORDER DETAILS
+
+                        // ==================================
+
+                        let orderDetails = "";
+
+                        cart.forEach(
+
+                            function (item) {
+
+                                const quantity =
+
+                                    item.quantity || 1;
+
+                                const itemTotal =
+
+                                    item.price *
+
+                                    quantity;
+
+                                orderDetails +=
+
+                                    `${item.name} x ${quantity} = ₦${itemTotal.toLocaleString()}\n`;
+
+                            }
+
+                        );
+
+                        // ==================================
+
+                        // SAVE ORDER DETAILS
+
+                        // ==================================
+
+                        document.getElementById(
+
+                            "orderDetails"
+
+                        ).value =
+
+                            orderDetails;
+
+                        document.getElementById(
+
+                            "orderTotal"
+
+                        ).value =
+
+                            `₦${total.toLocaleString()}`;
+
+                        // ==================================
+
+                        // CONVERT NAIRA TO KOBO
+
+                        // ==================================
+
+                        const amountInKobo =
+
+                            Math.round(total * 100);
+
+                        // ==================================
+
+                        // CHANGE BUTTON
+
+                        // ==================================
+
+                        payButton.disabled = true;
+
+                        payButton.textContent =
+
+                            "⏳ Opening Paystack...";
+
+                        // ==================================
+
+                        // CREATE PAYSTACK
+
+                        // ==================================
+
+                        try {
+
+                            const paystack =
+
+                                new PaystackPop();
+
+                            // ==================================
+
+                            // OPEN PAYSTACK CHECKOUT
+
+                            // ==================================
+
+                            await paystack.checkout({
+
+                                key:
+
+                                    "pk_test_82a4a1325a52f5cfab9e463e7a05a19ef95a2d05",
+
+                                email:
+
+                                    customerEmail,
+
+                                amount:
+
+                                    amountInKobo,
+
+                                currency:
+
+                                    "NGN",
+
+                                // CUSTOMER INFORMATION
+
+                                firstName:
+
+                                    customerName,
+
+                                phone:
+
+                                    customerPhone,
+
+                                // EXTRA INFORMATION
+
+                                metadata: {
+
+                                    custom_fields: [
+
+                                        {
+
+                                            display_name:
+
+                                                "Customer Name",
+
+                                            variable_name:
+
+                                                "customer_name",
+
+                                            value:
+
+                                                customerName
+
+                                        },
+
+                                        {
+
+                                            display_name:
+
+                                                "Phone Number",
+
+                                            variable_name:
+
+                                                "phone_number",
+
+                                            value:
+
+                                                customerPhone
+
+                                        }
+
+                                    ]
+
+                                },
+
+                                // ==================================
+
+                                // PAYMENT SUCCESS
+
+                                // ==================================
+
+                                onSuccess:
+
+                                    async function (
+
+                                        transaction
+
+                                    ) {
+
+                                        console.log(
+
+                                            "Payment successful:",
+
+                                            transaction
+
+                                        );
+
+                                        // Add payment reference
+
+                                        document.getElementById(
+
+                                            "orderDetails"
+
+                                        ).value =
+
+                                            orderDetails +
+
+                                            `\nPayment Reference: ${transaction.reference}`;
+
+                                        // ==================================
+
+                                        // SEND ORDER TO FORMSPREE
+
+                                        // ==================================
+
+                                        const formData =
+
+                                            new FormData(
+
+                                                checkoutForm
+
+                                            );
+
+                                        try {
+
+                                            const response =
+
+                                                await fetch(
+
+                                                    checkoutForm.action,
+
+                                                    {
+
+                                                        method:
+
+                                                            "POST",
+
+                                                        body:
+
+                                                            formData,
+
+                                                        headers: {
+
+                                                            "Accept":
+
+                                                                "application/json"
+
+                                                        }
+
+                                                    }
+
+                                                );
+
+                                            // ==================================
+
+                                            // FORMSPREE SUCCESS
+
+                                            // ==================================
+
+                                            if (
+
+                                                response.ok
+
+                                            ) {
+
+                                                // Clear cart
+
+                                                localStorage.removeItem(
+
+                                                    "tastyBitesCart"
+
+                                                );
+
+                                                // Go to thank-you page
+
+                                                window.location.href =
+
+                                                    "thankyou.html";
+
+                                            }
+
+                                            // ==================================
+
+                                            // FORMSPREE FAILED
+
+                                            // ==================================
+
+                                            else {
+
+                                                alert(
+
+                                                    "⚠️ Payment was successful, but the order notification could not be sent.\n\nPayment Reference: " +
+
+                                                    transaction.reference
+
+                                                );
+
+                                                payButton.disabled =
+
+                                                    false;
+
+                                                payButton.textContent =
+
+                                                    "💳 Pay Now with Paystack";
+
+                                            }
+
+                                        }
+
+                                        catch (error) {
+
+                                            console.error(
+
+                                                error
+
+                                            );
+
+                                            alert(
+
+                                                "⚠️ Payment was successful, but there was a problem sending your order.\n\nPayment Reference: " +
+
+                                                transaction.reference
+
+                                            );
+
+                                            payButton.disabled =
+
+                                                false;
+
+                                            payButton.textContent =
+
+                                                "💳 Pay Now with Paystack";
+
+                                        }
+
+                                    },
+
+                                // ==================================
+
+                                // PAYMENT CANCELLED
+
+                                // ==================================
+
+                                onCancel:
+
+                                    function () {
+
+                                        alert(
+
+                                            "❌ Payment was cancelled. Your order has not been submitted."
+
+                                        );
+
+                                        payButton.disabled =
+
+                                            false;
+
+                                        payButton.textContent =
+
+                                            "💳 Pay Now with Paystack";
+
+                                    },
+
+                                // ==================================
+
+                                // PAYSTACK ERROR
+
+                                // ==================================
+
+                                onError:
+
+                                    function (error) {
+
+                                        console.error(
+
+                                            "Paystack Error:",
+
+                                            error
+
+                                        );
+
+                                        alert(
+
+                                            "❌ Paystack could not open the payment window.\n\nPlease check your internet connection and try again."
+
+                                        );
+
+                                        payButton.disabled =
+
+                                            false;
+
+                                        payButton.textContent =
+
+                                            "💳 Pay Now with Paystack";
+
+                                    }
+
+                            });
+
+                        }
+
+                        catch (error) {
+
+                            console.error(
+
+                                "Payment Error:",
+
+                                error
+
+                            );
+
+                            alert(
+
+                                "❌ Something went wrong while opening Paystack.\n\nPlease try again."
+
+                            );
+
+                            payButton.disabled =
+
+                                false;
+
+                            payButton.textContent =
+
+                                "💳 Pay Now with Paystack";
+
+                        }
+
+                    }
+
+                );
+
+            }
+
+        );
 
     </script>
 
