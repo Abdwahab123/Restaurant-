@@ -9,7 +9,7 @@
     <link rel="icon" href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png">
 </head>
 <body>
-     <!-- HEADER -->
+      <!-- HEADER -->
 
     <header>
 
@@ -72,15 +72,48 @@
             <h3>👤 Customer Details</h3>
 
             <form
+
                 id="checkoutForm"
+
                 action="https://formspree.io/f/mwvgjkdp"
+
                 method="POST"
->
-                <input type="hidden" name="order" id="orderDetails">
 
-                <input type="hidden" name="total" id="orderTotal"> 
+            >
 
-                <input type="hidden" name="_subject" value="🛒 New Tasty Bites Order">
+                <!-- Hidden order information -->
+
+                <input
+
+                    type="hidden"
+
+                    name="order"
+
+                    id="orderDetails"
+
+                >
+
+                <input
+
+                    type="hidden"
+
+                    name="total"
+
+                    id="orderTotal"
+
+                >
+
+                <input
+
+                    type="hidden"
+
+                    name="_subject"
+
+                    value="🛒 New Tasty Bites Order"
+
+                >
+
+                <!-- NAME -->
 
                 <label for="customerName">
 
@@ -102,6 +135,8 @@
 
                 >
 
+                <!-- PHONE -->
+
                 <label for="customerPhone">
 
                     Phone Number
@@ -121,6 +156,8 @@
                     required
 
                 >
+
+                <!-- ADDRESS -->
 
                 <label for="deliveryAddress">
 
@@ -142,6 +179,8 @@
 
                 ></textarea>
 
+                <!-- NOTE -->
+
                 <label for="orderNote">
 
                     Order Note (Optional)
@@ -159,6 +198,8 @@
                     rows="3"
 
                 ></textarea>
+
+                <!-- SUBMIT -->
 
                 <button
 
@@ -190,7 +231,7 @@
 
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- MAIN JAVASCRIPT -->
 
     <script src="/Restaurant-/css/javascript/java.js"></script>
 
@@ -200,11 +241,13 @@
 
         document.addEventListener("DOMContentLoaded", function () {
 
-            // Get cart from localStorage
+            // Get cart
 
             const cart =
 
                 JSON.parse(localStorage.getItem("tastyBitesCart")) || [];
+
+            // Get elements
 
             const checkoutItems =
 
@@ -213,6 +256,10 @@
             const checkoutTotal =
 
                 document.getElementById("checkoutTotal");
+
+            const checkoutForm =
+
+                document.getElementById("checkoutForm");
 
             // If cart is empty
 
@@ -236,15 +283,19 @@
 
             }
 
+            // Calculate total
+
             let total = 0;
 
             checkoutItems.innerHTML = "";
 
-            // Display every item
+            // Display cart items
 
             cart.forEach(function (item) {
 
-                const quantity = item.quantity || 1;
+                const quantity =
+
+                    item.quantity || 1;
 
                 const itemTotal =
 
@@ -264,7 +315,11 @@
 
                     <div>
 
-                        <strong>${item.name}</strong>
+                        <strong>
+
+                            ${item.name}
+
+                        </strong>
 
                         <p>
 
@@ -292,75 +347,133 @@
 
                 `₦${total.toLocaleString()}`;
 
-            // Place order
-
-            const checkoutForm =
-
-                document.getElementById("checkoutForm");
+            // Handle Place Order
 
             checkoutForm.addEventListener(
 
                 "submit",
 
-                function (event) {
+                async function (event) {
+
+                    // Stop normal form submission
 
                     event.preventDefault();
 
-                    const name =
+                    // Create order details
 
-                        document.getElementById(
+                    let orderDetails = "";
 
-                            "customerName"
+                    cart.forEach(function (item) {
 
-                        ).value;
+                        const quantity =
 
-                    const phone =
+                            item.quantity || 1;
 
-                        document.getElementById(
+                        const itemTotal =
 
-                            "customerPhone"
+                            item.price * quantity;
 
-                        ).value;
+                        orderDetails +=
 
-                    const address =
+                            `${item.name} x ${quantity} = ₦${itemTotal.toLocaleString()}\n`;
 
-                        document.getElementById(
+                    });
 
-                            "deliveryAddress"
+                    // Put order information into hidden fields
 
-                        ).value;
+                    document.getElementById(
 
-                    const note =
+                        "orderDetails"
 
-                        document.getElementById(
+                    ).value = orderDetails;
 
-                            "orderNote"
+                    document.getElementById(
 
-                        ).value;
+                        "orderTotal"
 
-                    alert(
+                    ).value =
 
-                        `Thank you ${name}! 🎉\n\n` +
+                        `₦${total.toLocaleString()}`;
 
-                        `Your order has been received.\n\n` +
+                    // Create Formspree data
 
-                        `Total: ₦${total.toLocaleString()}`
+                    const formData =
 
-                    );
+                        new FormData(checkoutForm);
 
-                    // Clear cart after order
+                    try {
 
-                    localStorage.removeItem(
+                        // Send to Formspree
 
-                        "tastyBitesCart"
+                        const response =
 
-                    );
+                            await fetch(
 
-                    // Go to thank-you page
+                                checkoutForm.action,
 
-                    window.location.href =
+                                {
 
-                        "thankyou.html";
+                                    method: "POST",
+
+                                    body: formData,
+
+                                    headers: {
+
+                                        "Accept":
+
+                                            "application/json"
+
+                                    }
+
+                                }
+
+                            );
+
+                        // Successful
+
+                        if (response.ok) {
+
+                            // Clear cart
+
+                            localStorage.removeItem(
+
+                                "tastyBitesCart"
+
+                            );
+
+                            // Go to thank-you page
+
+                            window.location.href =
+
+                                "thankyou.html";
+
+                        }
+
+                        // Failed
+
+                        else {
+
+                            alert(
+
+                                "❌ Your order could not be sent. Please try again."
+
+                            );
+
+                        }
+
+                    }
+
+                    // Internet/Formspree error
+
+                    catch (error) {
+
+                        alert(
+
+                            "❌ There was a problem connecting to Formspree. Please check your internet connection."
+
+                        );
+
+                    }
 
                 }
 
@@ -372,6 +485,4 @@
 
 </body>
 
-</html>
-</body>
 </html>

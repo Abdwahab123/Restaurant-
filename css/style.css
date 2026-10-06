@@ -352,3 +352,101 @@ margin-top:40px;
     background: #D4AF37;
     color: #000;
 }
+
+/* ============================= */
+/* THANK YOU PAGE */
+/* ============================= */
+
+.thankyou-page {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.thankyou-card {
+    width: 100%;
+    max-width: 700px;
+    background: white;
+    padding: 45px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.success-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.thankyou-card h2 {
+    font-size: 38px;
+    color: #8B0000;
+    margin-bottom: 15px;
+}
+
+.thankyou-card p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.thankyou-message {
+    font-size: 20px !important;
+}
+
+.order-status {
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8f8f8;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.order-status h3 {
+    text-align: center;
+    color: #8B0000;
+    margin-bottom: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.status-item span {
+    font-size: 25px;
+}
+
+.status-item p {
+    margin: 0;
+}
+
+.thankyou-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.thankyou-buttons a {
+    text-decoration: none;
+}
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.home-btn:hover {
+    background: #D4AF37;
+    color: #000;
+}
