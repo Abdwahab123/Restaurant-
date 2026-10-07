@@ -1,643 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Tasty Bites</title>
-     
+
+    <title>Checkout | Tasty Bites Restaurant</title>
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png">
+
+    <!-- Tasty Bites Favicon - DO NOT CHANGE -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png"
+        id="2misrt"
+    >
 </head>
+
 <body>
-         <!-- HEADER -->
 
-    <header>
+    <!-- ================= HEADER ================= -->
 
-        <h1>🍽️ Tasty Bites Restaurant</h1>
+    <header class="site-header">
 
-        <nav>
+        <div class="container header-container">
 
-            <a href="index.html">Home</a>
+            <a href="index.html" class="logo">
+                Tasty Bites
+            </a>
 
-            <a href="menu.html">Menu</a>
+            <nav>
 
-            <a href="gallery.html">Gallery</a>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="delivery.html">Delivery</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="team.html">Team</a>
+                <a href="testimonials.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
 
-            <a href="about.html">About</a>
+            </nav>
 
-            <a href="contact.html">Contact</a>
-
-        </nav>
+        </div>
 
     </header>
 
-    <!-- CHECKOUT -->
+
+    <!-- ================= CHECKOUT HERO ================= -->
+
+    <section class="page-hero checkout-hero">
+
+        <div class="container">
+
+            <span class="hero-badge">
+                🛒 Secure Checkout
+            </span>
+
+            <h1>Complete Your Order</h1>
+
+            <p>
+                Review your order, enter your details and complete
+                your payment securely with Paystack.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CHECKOUT PAGE ================= -->
 
     <main class="checkout-page">
 
-        <h2>🛒 Checkout</h2>
+        <div class="container">
 
-        <p>Complete your details to place your order.</p>
+            <div class="checkout-layout">
 
-        <!-- ORDER SUMMARY -->
 
-        <section class="checkout-section">
+                <!-- ================= ORDER SUMMARY ================= -->
 
-            <h3>🍔 Your Order</h3>
+                <section class="checkout-section order-summary-section">
 
-            <div id="checkoutItems">
+                    <div class="checkout-section-header">
 
-                <p>Loading your order...</p>
+                        <div class="checkout-icon">
+                            🛒
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                YOUR ORDER
+                            </span>
+
+                            <h2>Order Summary</h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="checkoutItems"
+                        class="checkout-items"
+                    >
+
+                        <p class="checkout-loading">
+                            Loading your order...
+                        </p>
+
+                    </div>
+
+
+                    <div class="checkout-total">
+
+                        <span>
+                            Total Amount
+                        </span>
+
+                        <strong id="checkoutTotal">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="checkout-security">
+
+                        <span>🔒</span>
+
+                        <div>
+
+                            <strong>
+                                Secure Payment
+                            </strong>
+
+                            <p>
+                                Your payment is processed securely
+                                through Paystack.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= CUSTOMER DETAILS ================= -->
+
+                <section class="checkout-section customer-section">
+
+                    <div class="checkout-section-header">
+
+                        <div class="checkout-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                DELIVERY DETAILS
+                            </span>
+
+                            <h2>Customer Information</h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="checkoutForm"
+                        action="https://formspree.io/f/mwvgjkdp"
+                        method="POST"
+                    >
+
+                        <!-- ================= HIDDEN ORDER INFORMATION ================= -->
+
+                        <input
+                            type="hidden"
+                            name="order"
+                            id="orderDetails"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="total"
+                            id="orderTotal"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="🛒 New Tasty Bites Order"
+                        >
+
+
+                        <!-- ================= FULL NAME ================= -->
+
+                        <div class="form-group">
+
+                            <label for="customerName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerName"
+                                name="customerName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ================= PHONE ================= -->
+
+                        <div class="form-group">
+
+                            <label for="customerPhone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                name="customerPhone"
+                                placeholder="08012345678"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ================= EMAIL ================= -->
+
+                        <div class="form-group">
+
+                            <label for="customerEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="customerEmail"
+                                name="customerEmail"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ================= DELIVERY ADDRESS ================= -->
+
+                        <div class="form-group">
+
+                            <label for="deliveryAddress">
+                                Delivery Address
+                            </label>
+
+                            <textarea
+                                id="deliveryAddress"
+                                name="deliveryAddress"
+                                placeholder="Enter your complete delivery address"
+                                rows="4"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- ================= ORDER NOTE ================= -->
+
+                        <div class="form-group">
+
+                            <label for="orderNote">
+                                Order Note
+                                <span class="optional">
+                                    Optional
+                                </span>
+                            </label>
+
+                            <textarea
+                                id="orderNote"
+                                name="orderNote"
+                                placeholder="Any special instruction for your order?"
+                                rows="3"
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- ================= PAYMENT BUTTON ================= -->
+
+                        <button
+                            type="submit"
+                            id="payButton"
+                            class="checkout-btn"
+                        >
+                            💳 Pay Now with Paystack
+                        </button>
+
+
+                        <p class="payment-note">
+                            🔒 Secure payment • Your information is protected
+                        </p>
+
+                    </form>
+
+                </section>
 
             </div>
 
-            <div class="checkout-total">
 
-                <h3>
+            <!-- ================= BACK TO MENU ================= -->
 
-                    Total:
+            <div class="checkout-back">
 
-                    <span id="checkoutTotal">
-
-                        ₦0
-
-                    </span>
-
-                </h3>
+                <a href="menu.html">
+                    ← Continue Shopping
+                </a>
 
             </div>
 
-        </section>
-
-        <!-- CUSTOMER DETAILS -->
-
-        <section class="checkout-section">
-
-            <h3>👤 Customer Details</h3>
-
-            <form
-
-                id="checkoutForm"
-
-                action="https://formspree.io/f/mwvgjkdp"
-
-                method="POST"
-
-            >
-
-                <!-- HIDDEN ORDER INFORMATION -->
-
-                <input
-
-                    type="hidden"
-
-                    name="order"
-
-                    id="orderDetails"
-
-                >
-
-                <input
-
-                    type="hidden"
-
-                    name="total"
-
-                    id="orderTotal"
-
-                >
-
-                <input
-
-                    type="hidden"
-
-                    name="_subject"
-
-                    value="🛒 New Tasty Bites Order"
-
-                >
-
-                <!-- FULL NAME -->
-
-                <label for="customerName">
-
-                    Full Name
-
-                </label>
-
-                <input
-
-                    type="text"
-
-                    id="customerName"
-
-                    name="customerName"
-
-                    placeholder="Enter your full name"
-
-                    required
-
-                >
-
-                <!-- PHONE -->
-
-                <label for="customerPhone">
-
-                    Phone Number
-
-                </label>
-
-                <input
-
-                    type="tel"
-
-                    id="customerPhone"
-
-                    name="customerPhone"
-
-                    placeholder="08012345678"
-
-                    required
-
-                >
-
-                <!-- EMAIL -->
-
-                <label for="customerEmail">
-
-                    Email Address
-
-                </label>
-
-                <input
-
-                    type="email"
-
-                    id="customerEmail"
-
-                    name="customerEmail"
-
-                    placeholder="you@example.com"
-
-                    required
-
-                >
-
-                <!-- ADDRESS -->
-
-                <label for="deliveryAddress">
-
-                    Delivery Address
-
-                </label>
-
-                <textarea
-
-                    id="deliveryAddress"
-
-                    name="deliveryAddress"
-
-                    placeholder="Enter your delivery address"
-
-                    rows="4"
-
-                    required
-
-                ></textarea>
-
-                <!-- ORDER NOTE -->
-
-                <label for="orderNote">
-
-                    Order Note (Optional)
-
-                </label>
-
-                <textarea
-
-                    id="orderNote"
-
-                    name="orderNote"
-
-                    placeholder="Any special instruction?"
-
-                    rows="3"
-
-                ></textarea>
-
-                <!-- PAYMENT BUTTON -->
-
-                <button
-
-                    type="submit"
-
-                    id="payButton"
-
-                    class="checkout-btn"
-
-                >
-
-                    💳 Pay Now with Paystack
-
-                </button>
-
-            </form>
-
-        </section>
+        </div>
 
     </main>
 
-    <!-- FOOTER -->
 
-    <footer>
+    <!-- ================= FOOTER ================= -->
 
-        <p>
+    <footer class="site-footer">
 
-            © 2026 Tasty Bites Restaurant.
+        <div class="container">
 
-            All Rights Reserved.
+            <div class="footer-grid">
 
-        </p>
+
+                <div class="footer-about">
+
+                    <h3>Tasty Bites</h3>
+
+                    <p>
+                        Delicious meals, quality ingredients and
+                        memorable dining experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <h3>Quick Links</h3>
+
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+
+                <div class="footer-contact">
+
+                    <h3>Contact Us</h3>
+
+                    <p>
+                        📍 Ikorodu, Lagos, Nigeria
+                    </p>
+
+                    <p>
+                        📞
+                        <a href="tel:08060707486">
+                            08060707486
+                        </a>
+                    </p>
+
+                    <p>
+                        ✉️
+                        <a href="mailto:abdulwahabajose03@gmail.com">
+                            abdulwahabajose03@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; 2026 Tasty Bites Restaurant.
+                    All Rights Reserved.
+                </p>
+
+                <p>
+                    Designed by Abdul Wahab
+                </p>
+
+            </div>
+
+        </div>
 
     </footer>
 
-    <!-- PAYSTACK V2 -->
+
+    <!-- ================= PAYSTACK ================= -->
 
     <script src="https://js.paystack.co/v2/inline.js"></script>
 
-    <!-- CHECKOUT JAVASCRIPT -->
+
+    <!-- ================= CHECKOUT JAVASCRIPT ================= -->
 
     <script>
 
         document.addEventListener(
-
             "DOMContentLoaded",
-
             function () {
 
                 // ==========================================
-
                 // GET CART
-
                 // ==========================================
 
                 const cart =
-
                     JSON.parse(
-
                         localStorage.getItem(
-
                             "tastyBitesCart"
-
                         )
-
                     ) || [];
 
+
                 // ==========================================
-
                 // GET ELEMENTS
-
                 // ==========================================
 
                 const checkoutItems =
-
                     document.getElementById(
-
                         "checkoutItems"
-
                     );
 
                 const checkoutTotal =
-
                     document.getElementById(
-
                         "checkoutTotal"
-
                     );
 
                 const checkoutForm =
-
                     document.getElementById(
-
                         "checkoutForm"
-
                     );
 
                 const payButton =
-
                     document.getElementById(
-
                         "payButton"
-
                     );
 
+
                 // ==========================================
-
                 // CHECK EMPTY CART
-
                 // ==========================================
 
                 if (cart.length === 0) {
 
                     checkoutItems.innerHTML = `
 
-                        <p>
+                        <div class="empty-checkout">
 
-                            Your cart is empty.
+                            <div class="empty-checkout-icon">
+                                🛒
+                            </div>
 
-                        </p>
+                            <h3>
+                                Your cart is empty
+                            </h3>
 
-                        <a href="menu.html">
+                            <p>
+                                Add some delicious meals before
+                                proceeding to checkout.
+                            </p>
 
-                            🍔 Go Back to Menu
+                            <a
+                                href="menu.html"
+                                class="btn-primary"
+                            >
+                                🍔 Go Back to Menu
+                            </a>
 
-                        </a>
+                        </div>
 
                     `;
 
                     checkoutTotal.textContent =
-
                         "₦0";
 
                     payButton.disabled = true;
 
                     return;
-
                 }
 
+
                 // ==========================================
-
                 // CALCULATE TOTAL
-
                 // ==========================================
 
                 let total = 0;
 
                 checkoutItems.innerHTML = "";
 
+
                 // ==========================================
-
                 // DISPLAY CART ITEMS
-
                 // ==========================================
 
                 cart.forEach(
-
                     function (item) {
 
                         const quantity =
+                            Number(item.quantity) || 1;
 
-                            item.quantity || 1;
+                        const price =
+                            Number(item.price) || 0;
 
                         const itemTotal =
-
-                            item.price * quantity;
+                            price * quantity;
 
                         total += itemTotal;
 
+
                         const itemElement =
-
                             document.createElement(
-
                                 "div"
-
                             );
 
-                        itemElement.className =
 
+                        itemElement.className =
                             "checkout-item";
+
 
                         itemElement.innerHTML = `
 
-                            <div>
+                            <div class="checkout-item-info">
 
                                 <strong>
-
                                     ${item.name}
-
                                 </strong>
 
                                 <p>
-
                                     Quantity:
-
                                     ${quantity}
-
                                 </p>
 
                             </div>
 
-                            <strong>
-
-                                ₦${itemTotal.toLocaleString()}
-
+                            <strong class="checkout-item-price">
+                                ₦${itemTotal.toLocaleString("en-NG")}
                             </strong>
 
                         `;
 
+
                         checkoutItems.appendChild(
-
                             itemElement
-
                         );
 
                     }
-
                 );
 
+
                 // ==========================================
-
                 // DISPLAY TOTAL
-
                 // ==========================================
 
                 checkoutTotal.textContent =
+                    `₦${total.toLocaleString("en-NG")}`;
 
-                    `₦${total.toLocaleString()}`;
 
                 // ==========================================
-
                 // PAYMENT
-
                 // ==========================================
 
                 checkoutForm.addEventListener(
-
                     "submit",
-
                     async function (event) {
 
                         // Stop normal form submission
-
                         event.preventDefault();
 
+
                         // ==================================
-
                         // GET CUSTOMER INFORMATION
-
                         // ==================================
 
                         const customerName =
-
                             document.getElementById(
-
                                 "customerName"
-
                             ).value.trim();
 
                         const customerPhone =
-
                             document.getElementById(
-
                                 "customerPhone"
-
                             ).value.trim();
 
                         const customerEmail =
-
                             document.getElementById(
-
                                 "customerEmail"
-
                             ).value.trim();
 
+
                         // ==================================
-
                         // CHECK EMAIL
-
                         // ==================================
 
                         if (!customerEmail) {
 
                             alert(
-
                                 "❌ Please enter your email address."
-
                             );
 
                             return;
-
                         }
 
+
                         // ==================================
-
                         // CREATE ORDER DETAILS
-
                         // ==================================
 
                         let orderDetails = "";
 
-                        cart.forEach(
 
+                        cart.forEach(
                             function (item) {
 
                                 const quantity =
+                                    Number(item.quantity) || 1;
 
-                                    item.quantity || 1;
+                                const price =
+                                    Number(item.price) || 0;
 
                                 const itemTotal =
+                                    price * quantity;
 
-                                    item.price *
-
-                                    quantity;
 
                                 orderDetails +=
-
-                                    `${item.name} x ${quantity} = ₦${itemTotal.toLocaleString()}\n`;
+                                    `${item.name} x ${quantity} = ₦${itemTotal.toLocaleString("en-NG")}\n`;
 
                             }
-
                         );
 
+
                         // ==================================
-
                         // SAVE ORDER DETAILS
-
                         // ==================================
 
                         document.getElementById(
-
                             "orderDetails"
-
                         ).value =
-
                             orderDetails;
 
+
                         document.getElementById(
-
                             "orderTotal"
-
                         ).value =
+                            `₦${total.toLocaleString("en-NG")}`;
 
-                            `₦${total.toLocaleString()}`;
 
                         // ==================================
-
                         // CONVERT NAIRA TO KOBO
-
                         // ==================================
 
                         const amountInKobo =
-
                             Math.round(total * 100);
 
+
                         // ==================================
-
                         // CHANGE BUTTON
-
                         // ==================================
 
                         payButton.disabled = true;
 
                         payButton.textContent =
-
                             "⏳ Opening Paystack...";
 
+
                         // ==================================
-
                         // CREATE PAYSTACK
-
                         // ==================================
 
                         try {
 
                             const paystack =
-
                                 new PaystackPop();
 
+
                             // ==================================
-
                             // OPEN PAYSTACK CHECKOUT
-
                             // ==================================
 
                             await paystack.checkout({
 
                                 key:
-
                                     "pk_test_82a4a1325a52f5cfab9e463e7a05a19ef95a2d05",
 
                                 email:
-
                                     customerEmail,
 
                                 amount:
-
                                     amountInKobo,
 
                                 currency:
-
                                     "NGN",
+
 
                                 // CUSTOMER INFORMATION
 
                                 firstName:
-
                                     customerName,
 
                                 phone:
-
                                     customerPhone,
+
 
                                 // EXTRA INFORMATION
 
@@ -646,169 +739,125 @@
                                     custom_fields: [
 
                                         {
-
                                             display_name:
-
                                                 "Customer Name",
 
                                             variable_name:
-
                                                 "customer_name",
 
                                             value:
-
                                                 customerName
-
                                         },
 
                                         {
-
                                             display_name:
-
                                                 "Phone Number",
 
                                             variable_name:
-
                                                 "phone_number",
 
                                             value:
-
                                                 customerPhone
-
                                         }
 
                                     ]
 
                                 },
 
+
                                 // ==================================
-
                                 // PAYMENT SUCCESS
-
                                 // ==================================
 
                                 onSuccess:
-
                                     async function (
-
                                         transaction
-
                                     ) {
 
                                         console.log(
-
                                             "Payment successful:",
-
                                             transaction
-
                                         );
+
 
                                         // Add payment reference
 
                                         document.getElementById(
-
                                             "orderDetails"
-
                                         ).value =
-
                                             orderDetails +
-
                                             `\nPayment Reference: ${transaction.reference}`;
 
+
                                         // ==================================
-
                                         // SEND ORDER TO FORMSPREE
-
                                         // ==================================
 
                                         const formData =
-
                                             new FormData(
-
                                                 checkoutForm
-
                                             );
+
 
                                         try {
 
                                             const response =
-
                                                 await fetch(
-
                                                     checkoutForm.action,
-
                                                     {
-
                                                         method:
-
                                                             "POST",
 
                                                         body:
-
                                                             formData,
 
                                                         headers: {
-
                                                             "Accept":
-
                                                                 "application/json"
-
                                                         }
-
                                                     }
-
                                                 );
 
+
                                             // ==================================
-
                                             // FORMSPREE SUCCESS
-
                                             // ==================================
 
                                             if (
-
                                                 response.ok
-
                                             ) {
 
                                                 // Clear cart
 
                                                 localStorage.removeItem(
-
                                                     "tastyBitesCart"
-
                                                 );
+
 
                                                 // Go to thank-you page
 
                                                 window.location.href =
-
                                                     "thankyou.html";
 
                                             }
 
+
                                             // ==================================
-
                                             // FORMSPREE FAILED
-
                                             // ==================================
 
                                             else {
 
                                                 alert(
-
                                                     "⚠️ Payment was successful, but the order notification could not be sent.\n\nPayment Reference: " +
-
                                                     transaction.reference
-
                                                 );
 
-                                                payButton.disabled =
 
+                                                payButton.disabled =
                                                     false;
 
                                                 payButton.textContent =
-
                                                     "💳 Pay Now with Paystack";
 
                                             }
@@ -818,87 +867,70 @@
                                         catch (error) {
 
                                             console.error(
-
                                                 error
-
                                             );
+
 
                                             alert(
-
                                                 "⚠️ Payment was successful, but there was a problem sending your order.\n\nPayment Reference: " +
-
                                                 transaction.reference
-
                                             );
 
-                                            payButton.disabled =
 
+                                            payButton.disabled =
                                                 false;
 
                                             payButton.textContent =
-
                                                 "💳 Pay Now with Paystack";
 
                                         }
 
                                     },
 
+
                                 // ==================================
-
                                 // PAYMENT CANCELLED
-
                                 // ==================================
 
                                 onCancel:
-
                                     function () {
 
                                         alert(
-
                                             "❌ Payment was cancelled. Your order has not been submitted."
-
                                         );
 
-                                        payButton.disabled =
 
+                                        payButton.disabled =
                                             false;
 
                                         payButton.textContent =
-
                                             "💳 Pay Now with Paystack";
 
                                     },
 
+
                                 // ==================================
-
                                 // PAYSTACK ERROR
-
                                 // ==================================
 
                                 onError:
-
                                     function (error) {
 
                                         console.error(
-
                                             "Paystack Error:",
-
                                             error
-
                                         );
+
 
                                         alert(
-
                                             "❌ Paystack could not open the payment window.\n\nPlease check your internet connection and try again."
-
                                         );
 
-                                        payButton.disabled =
 
+                                        payButton.disabled =
                                             false;
 
                                         payButton.textContent =
-
                                             "💳 Pay Now with Paystack";
 
                                     }
@@ -910,31 +942,25 @@
                         catch (error) {
 
                             console.error(
-
                                 "Payment Error:",
-
                                 error
-
                             );
+
 
                             alert(
-
                                 "❌ Something went wrong while opening Paystack.\n\nPlease try again."
-
                             );
 
-                            payButton.disabled =
 
+                            payButton.disabled =
                                 false;
 
                             payButton.textContent =
-
                                 "💳 Pay Now with Paystack";
 
                         }
 
                     }
-
                 );
 
             }

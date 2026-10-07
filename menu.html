@@ -2,434 +2,1910 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasty Bites - Menu</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore the delicious menu at Tasty Bites Restaurant."
+    >
+
+    <meta
+        name="keywords"
+        content="Tasty Bites, restaurant menu, food, Lagos restaurant, Nigerian food"
+    >
+
+    <title>Menu | Tasty Bites Restaurant</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png">
+
+    <!-- DO NOT CHANGE THIS FAVICON -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png"
+        id="2misrt"
+    >
 </head>
 
 <body>
 
-    <!-- =========================
-         MENU HEADER
-    ========================== -->
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
 
-    <h1>🍽️ Our Menu</h1>
+    <header class="site-header">
 
-    <p>
-        Discover our delicious selection of freshly prepared meals.
-        Every dish is made with quality ingredients to give you
-        an unforgettable dining experience.
-    </p>
+        <div class="container header-container">
 
-    <hr>
-
-
-    <!-- =========================
-         MENU SEARCH
-    ========================== -->
-
-    <section>
-
-        <h2>🔎 Find Your Favourite Meal</h2>
-
-        <input
-            type="text"
-            id="menuSearch"
-            placeholder="Search for food..."
-        >
-
-    </section>
-
-    <hr>
-
-
-    <!-- =========================
-         FOOD MENU
-    ========================== -->
-
-    <section class="menu-container">
-
-
-        <!-- JOLLOF RICE -->
-        <div class="menu-item" data-category="rice">
-
-            <h2>🍚 Jollof Rice with Grilled Chicken</h2>
-
-            <img
-                src="YOUR-JOLLOF-RICE-IMAGE-HERE"
-                alt="Jollof Rice with Grilled Chicken"
-                width="300"
-            >
-
-            <p>
-                Our signature Nigerian Jollof Rice served with juicy
-                grilled chicken, fresh salad, and a chilled soft drink.
-            </p>
-
-            <p>
-                <strong>Price: ₦4,500</strong>
-            </p>
-
-            <button
-                class="add-to-cart"
-                data-name="Jollof Rice with Grilled Chicken"
-                data-price="4500">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-        <hr>
-
-
-        <!-- PIZZA -->
-        <div class="menu-item" data-category="pizza">
-
-            <h2>🍕 Special Cheese Pizza</h2>
-
-            <img
-                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600"
-                alt="Special Cheese Pizza"
-                width="300"
-            >
-
-            <p>
-                Freshly baked pizza loaded with mozzarella cheese,
-                vegetables, pepperoni, and our special homemade sauce.
-            </p>
-
-            <p>
-                <strong>Price: ₦6,000</strong>
-            </p>
-
-            <button
-                class="add-to-cart"
-                data-name="Special Cheese Pizza"
-                data-price="6000">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-        <hr>
-
-
-        <!-- BURGER -->
-        <div class="menu-item" data-category="burger">
-
-            <h2>🍔 Classic Beef Burger</h2>
-
-            <img
-                src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600"
-                alt="Classic Beef Burger"
-                width="300"
-            >
-
-            <p>
-                A juicy beef burger served with crispy fries
-                and a refreshing soft drink.
-            </p>
-
-            <p>
-                <strong>Price: ₦4,000</strong>
-            </p>
-
-            <button
-                class="add-to-cart"
-                data-name="Classic Beef Burger"
-                data-price="4000">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-        <hr>
-
-
-        <!-- SHAWARMA -->
-        <div class="menu-item" data-category="shawarma">
-
-            <h2>🌯 Chicken Shawarma</h2>
-
-            <img
-                src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600"
-                alt="Chicken Shawarma"
-                width="300"
-            >
-
-            <p>
-                Soft tortilla wrap filled with grilled chicken,
-                fresh vegetables, and creamy garlic sauce.
-            </p>
-
-            <p>
-                <strong>Price: ₦3,500</strong>
-            </p>
-
-            <button
-                class="add-to-cart"
-                data-name="Chicken Shawarma"
-                data-price="3500">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-        <hr>
-
-
-        <!-- GRILLED CHICKEN -->
-        <div class="menu-item" data-category="chicken">
-
-            <h2>🍗 Grilled Chicken & Fries</h2>
-
-            <img
-                src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600"
-                alt="Grilled Chicken and Fries"
-                width="300"
-            >
-
-            <p>
-                Tender grilled chicken served with crispy fries
-                and a side of fresh vegetables.
-            </p>
-
-            <p>
-                <strong>Price: ₦5,500</strong>
-            </p>
-
-            <button
-                class="add-to-cart"
-                data-name="Grilled Chicken & Fries"
-                data-price="5500">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-    </section>
-
-    <hr>
-
-
-    <!-- =========================
-         DRINKS
-    ========================== -->
-
-    <section>
-
-        <h2>🥤 Refreshing Drinks</h2>
-
-        <div class="menu-item" data-category="drinks">
-
-            <h3>🥤 Coca-Cola</h3>
-            <p>₦700</p>
-
-            <button
-                class="add-to-cart"
-                data-name="Coca-Cola"
-                data-price="700">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-
-        <div class="menu-item" data-category="drinks">
-
-            <h3>🥤 Fanta</h3>
-            <p>₦700</p>
-
-            <button
-                class="add-to-cart"
-                data-name="Fanta"
-                data-price="700">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-
-        <div class="menu-item" data-category="drinks">
-
-            <h3>🥤 Sprite</h3>
-            <p>₦700</p>
-
-            <button
-                class="add-to-cart"
-                data-name="Sprite"
-                data-price="700">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-
-        <div class="menu-item" data-category="drinks">
-
-            <h3>🧃 Fresh Orange Juice</h3>
-            <p>₦1,500</p>
-
-            <button
-                class="add-to-cart"
-                data-name="Fresh Orange Juice"
-                data-price="1500">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-
-        <div class="menu-item" data-category="drinks">
-
-            <h3>🥤 Bottled Water</h3>
-            <p>₦500</p>
-
-            <button
-                class="add-to-cart"
-                data-name="Bottled Water"
-                data-price="500">
-                🛒 Add to Order
-            </button>
-
-        </div>
-
-    </section>
-
-    <hr>
-
-
-    <!-- =========================
-         CART
-    ========================== -->
-
-    <section class="cart-section" id="cart">
-
-        <h2>🛒 Your Order</h2>
-
-        <div id="cartItems">
-
-            <p>Your cart is empty.</p>
-
-        </div>
-
-
-        <div class="cart-summary">
-
-            <h3>
-                Total:
-                <span id="cartTotal">₦0</span>
-            </h3>
-
-            <button
-                type="button"
-                id="clearCart">
-                🗑️ Clear Cart
-            </button>
-
-            <a
-                href="checkout.html"
-                class="checkout-btn">
-                ✅ Proceed to Checkout
+            <a href="index.html" class="logo">
+                🍴 Tasty Bites
             </a>
 
+            <nav class="main-navigation">
+
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="delivery.html">Delivery</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="team.html">Team</a>
+                <a href="testimonials.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+
+            </nav>
+
         </div>
 
-    </section>
-
-    <hr>
+    </header>
 
 
-    <!-- =========================
-         WHY OUR MENU
-    ========================== -->
+    <!-- ==================================================
+         MENU HERO
+    ================================================== -->
 
-    <section>
+    <main>
 
-        <h2>⭐ Why Our Menu?</h2>
+        <section class="page-hero">
 
-        <p>✔ Fresh ingredients every day.</p>
+            <div class="container">
 
-        <p>✔ Affordable prices.</p>
+                <span class="section-label">
+                    TASTY BITES
+                </span>
 
-        <p>✔ Delicious local and international dishes.</p>
+                <h1>
+                    Our Menu
+                </h1>
 
-        <p>✔ Meals prepared by experienced chefs.</p>
+                <p>
+                    Freshly prepared meals, delicious flavours,
+                    and something for everyone.
+                </p>
 
-    </section>
+            </div>
 
-    <hr>
-
-
-    <!-- =========================
-         QUICK NAVIGATION
-    ========================== -->
-
-    <h2>🧭 Quick Navigation</h2>
-
-    <nav>
-
-        <a href="index.html">🏠 Home</a>
-
-        <a href="about.html">📖 About</a>
-
-        <a href="menu.html">🍽 Menu</a>
-
-        <a href="services.html">🛎 Services</a>
-
-        <a href="gallery.html">📸 Gallery</a>
-
-        <a href="reservation.html">📅 Reservation</a>
-
-        <a href="delivery.html">🚚 Delivery</a>
-
-        <a href="team.html">👨‍🍳 Team</a>
-
-        <a href="testimonials.html">⭐ Reviews</a>
-
-        <a href="contact.html">📞 Contact</a>
-
-        <a href="faq.html">❓ FAQ</a>
-
-    </nav>
-
-    <hr>
+        </section>
 
 
-    <!-- BACK TO HOME -->
+        <!-- ==================================================
+             MENU INTRO
+        ================================================== -->
 
-    <p>
-        <a href="index.html">⬅ Back to Home</a>
-    </p>
+        <section class="menu-intro">
 
-    <hr>
+            <div class="container">
+
+                <h2>
+                    Delicious Food, Made With Passion
+                </h2>
+
+                <p>
+                    Explore our carefully selected menu and choose
+                    your favourite meal. Add your selections to your
+                    cart and proceed to checkout when you're ready.
+                </p>
+
+            </div>
+
+        </section>
 
 
-    <!-- =========================
+        <!-- ==================================================
+             SEARCH
+        ================================================== -->
+
+        <section class="menu-tools">
+
+            <div class="container">
+
+                <div class="menu-search">
+
+                    <label for="menuSearch">
+                        Search our menu
+                    </label>
+
+                    <input
+                        type="search"
+                        id="menuSearch"
+                        placeholder="Search for food..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- ==================================================
+                     CATEGORY FILTERS
+                ================================================== -->
+
+                <div class="menu-filters">
+
+                    <button
+                        type="button"
+                        class="filter-btn selected"
+                        data-category="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-category="main-meals"
+                    >
+                        Main Meals
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-category="fast-food"
+                    >
+                        Fast Food
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-category="pizza"
+                    >
+                        Pizza
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-category="chicken"
+                    >
+                        Chicken
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-category="drinks"
+                    >
+                        Drinks
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-category="desserts"
+                    >
+                        Desserts
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             MENU ITEMS
+        ================================================== -->
+
+        <section class="menu-section">
+
+            <div class="container">
+
+                <!-- ================= MAIN MEALS ================= -->
+
+                <div class="menu-category">
+
+                    <div class="category-heading">
+                        <span>🍛</span>
+
+                        <div>
+                            <h2>Main Meals</h2>
+                            <p>Our satisfying everyday favourites.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="menu-grid">
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <!-- ADD YOUR FOOD IMAGE HERE -->
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    Jollof Rice &amp; Grilled Chicken
+                                </h3>
+
+                                <p>
+                                    Flavourful Nigerian jollof rice
+                                    served with grilled chicken.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦4,500
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Jollof Rice & Grilled Chicken"
+                                        data-price="4500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    Fried Rice &amp; Chicken
+                                </h3>
+
+                                <p>
+                                    Delicious fried rice served
+                                    with juicy chicken.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦4,800
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Fried Rice & Chicken"
+                                        data-price="4800"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    Nigerian Party Jollof
+                                </h3>
+
+                                <p>
+                                    Rich and smoky party-style
+                                    Nigerian jollof rice.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦3,500
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Nigerian Party Jollof"
+                                        data-price="3500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    White Rice &amp; Chicken
+                                </h3>
+
+                                <p>
+                                    Soft white rice served with
+                                    delicious chicken.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦4,500
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="White Rice & Chicken"
+                                        data-price="4500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    Ofada Rice &amp; Sauce
+                                </h3>
+
+                                <p>
+                                    Traditional Ofada rice with
+                                    rich local sauce.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦5,000
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Ofada Rice & Sauce"
+                                        data-price="5000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    Spaghetti Bolognese
+                                </h3>
+
+                                <p>
+                                    Pasta cooked in a rich
+                                    Bolognese sauce.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦5,000
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Spaghetti Bolognese"
+                                        data-price="5000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    Chicken Pasta
+                                </h3>
+
+                                <p>
+                                    Creamy pasta combined with
+                                    seasoned chicken.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦5,500
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Chicken Pasta"
+                                        data-price="5500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article
+                            class="menu-item"
+                            data-category="main-meals"
+                        >
+
+                            <div class="menu-item-content">
+
+                                <h3>
+                                    Grilled Chicken &amp; Fries
+                                </h3>
+
+                                <p>
+                                    Grilled chicken served with
+                                    crispy golden fries.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>
+                                        ₦5,500
+                                    </strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Grilled Chicken & Fries"
+                                        data-price="5500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= FAST FOOD ================= -->
+
+                <div class="menu-category">
+
+                    <div class="category-heading">
+
+                        <span>🍔</span>
+
+                        <div>
+                            <h2>Fast Food</h2>
+                            <p>Quick, tasty and satisfying.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-grid">
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Classic Beef Burger</h3>
+
+                                <p>
+                                    Juicy beef patty with fresh
+                                    toppings and sauce.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Classic Beef Burger"
+                                        data-price="4000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Chicken Burger</h3>
+
+                                <p>
+                                    Tender chicken with fresh
+                                    toppings and tasty sauce.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Chicken Burger"
+                                        data-price="4500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Double Cheeseburger</h3>
+
+                                <p>
+                                    Two juicy beef patties with
+                                    melted cheese.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦5,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Double Cheeseburger"
+                                        data-price="5500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Chicken Shawarma</h3>
+
+                                <p>
+                                    Seasoned chicken wrapped with
+                                    fresh vegetables and sauce.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦3,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Chicken Shawarma"
+                                        data-price="3500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Beef Shawarma</h3>
+
+                                <p>
+                                    Tasty beef shawarma packed
+                                    with fresh fillings.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Beef Shawarma"
+                                        data-price="4000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Chicken Wings</h3>
+
+                                <p>
+                                    Tender, seasoned chicken wings
+                                    prepared to perfection.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Chicken Wings"
+                                        data-price="4500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Loaded Fries</h3>
+
+                                <p>
+                                    Crispy fries loaded with tasty
+                                    toppings and sauce.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Loaded Fries"
+                                        data-price="4000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="fast-food">
+
+                            <div class="menu-item-content">
+
+                                <h3>Meat Pie</h3>
+
+                                <p>
+                                    Freshly baked pastry filled with
+                                    seasoned meat.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦1,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Meat Pie"
+                                        data-price="1500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PIZZA ================= -->
+
+                <div class="menu-category">
+
+                    <div class="category-heading">
+
+                        <span>🍕</span>
+
+                        <div>
+                            <h2>Pizza</h2>
+                            <p>Freshly prepared and loaded with flavour.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-grid">
+
+                        <article class="menu-item" data-category="pizza">
+
+                            <div class="menu-item-content">
+
+                                <h3>Chicken &amp; Cheese Pizza</h3>
+
+                                <p>
+                                    Chicken, cheese and delicious
+                                    pizza toppings.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦6,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Chicken & Cheese Pizza"
+                                        data-price="6000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="pizza">
+
+                            <div class="menu-item-content">
+
+                                <h3>Pepperoni Pizza</h3>
+
+                                <p>
+                                    Classic pizza topped with
+                                    pepperoni and cheese.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦6,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Pepperoni Pizza"
+                                        data-price="6500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="pizza">
+
+                            <div class="menu-item-content">
+
+                                <h3>Beef Pizza</h3>
+
+                                <p>
+                                    Delicious beef and cheese
+                                    combination.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦6,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Beef Pizza"
+                                        data-price="6500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="pizza">
+
+                            <div class="menu-item-content">
+
+                                <h3>Veggie Pizza</h3>
+
+                                <p>
+                                    Fresh vegetables with delicious
+                                    cheese and pizza sauce.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦5,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Veggie Pizza"
+                                        data-price="5500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="pizza">
+
+                            <div class="menu-item-content">
+
+                                <h3>Tasty Bites Special Pizza</h3>
+
+                                <p>
+                                    Our special pizza packed with
+                                    delicious toppings.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦7,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Tasty Bites Special Pizza"
+                                        data-price="7500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= CHICKEN ================= -->
+
+                <div class="menu-category">
+
+                    <div class="category-heading">
+
+                        <span>🍗</span>
+
+                        <div>
+                            <h2>Chicken</h2>
+                            <p>Chicken prepared with delicious flavours.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-grid">
+
+                        <article class="menu-item" data-category="chicken">
+
+                            <div class="menu-item-content">
+
+                                <h3>Crispy Fried Chicken</h3>
+
+                                <p>
+                                    Crispy outside and juicy inside.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Crispy Fried Chicken"
+                                        data-price="4000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="chicken">
+
+                            <div class="menu-item-content">
+
+                                <h3>BBQ Chicken</h3>
+
+                                <p>
+                                    Tender chicken coated in rich
+                                    BBQ flavour.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="BBQ Chicken"
+                                        data-price="4500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="chicken">
+
+                            <div class="menu-item-content">
+
+                                <h3>Grilled Chicken</h3>
+
+                                <p>
+                                    Seasoned chicken grilled for
+                                    a delicious smoky taste.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Grilled Chicken"
+                                        data-price="4500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="chicken">
+
+                            <div class="menu-item-content">
+
+                                <h3>Spicy Chicken</h3>
+
+                                <p>
+                                    Delicious chicken with a spicy
+                                    and flavourful seasoning.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦4,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Spicy Chicken"
+                                        data-price="4500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= DRINKS ================= -->
+
+                <div class="menu-category">
+
+                    <div class="category-heading">
+
+                        <span>🥤</span>
+
+                        <div>
+                            <h2>Drinks</h2>
+                            <p>Refresh yourself with a chilled drink.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-grid">
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Coca-Cola</h3>
+
+                                <p>Refreshing chilled Coca-Cola.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦700</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Coca-Cola"
+                                        data-price="700"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Fanta</h3>
+
+                                <p>Refreshing chilled Fanta.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦700</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Fanta"
+                                        data-price="700"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Sprite</h3>
+
+                                <p>Refreshing chilled Sprite.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦700</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Sprite"
+                                        data-price="700"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Pepsi</h3>
+
+                                <p>Refreshing chilled Pepsi.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦700</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Pepsi"
+                                        data-price="700"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Bottled Water</h3>
+
+                                <p>Cold bottled drinking water.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Bottled Water"
+                                        data-price="500"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Fresh Orange Juice</h3>
+
+                                <p>Fresh and refreshing orange juice.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦1,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Fresh Orange Juice"
+                                        data-price="1500"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Pineapple Juice</h3>
+
+                                <p>Sweet and refreshing pineapple juice.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦1,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Pineapple Juice"
+                                        data-price="1500"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Chapman</h3>
+
+                                <p>A refreshing Nigerian-style drink.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦1,800</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Chapman"
+                                        data-price="1800"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Zobo</h3>
+
+                                <p>Refreshing Nigerian hibiscus drink.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦1,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Zobo"
+                                        data-price="1000"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Strawberry Smoothie</h3>
+
+                                <p>Creamy strawberry smoothie.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦2,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Strawberry Smoothie"
+                                        data-price="2000"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Mango Smoothie</h3>
+
+                                <p>Fresh and creamy mango smoothie.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦2,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Mango Smoothie"
+                                        data-price="2000"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="drinks">
+
+                            <div class="menu-item-content">
+
+                                <h3>Milkshake</h3>
+
+                                <p>Thick, creamy and delicious milkshake.</p>
+
+                                <div class="menu-item-bottom">
+                                    <strong>₦2,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Milkshake"
+                                        data-price="2500"
+                                    >
+                                        Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= DESSERTS ================= -->
+
+                <div class="menu-category">
+
+                    <div class="category-heading">
+
+                        <span>🍰</span>
+
+                        <div>
+                            <h2>Desserts</h2>
+                            <p>Finish your meal with something sweet.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-grid">
+
+                        <article class="menu-item" data-category="desserts">
+
+                            <div class="menu-item-content">
+
+                                <h3>Chocolate Cake</h3>
+
+                                <p>
+                                    Rich and delicious chocolate cake.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦2,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Chocolate Cake"
+                                        data-price="2500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="desserts">
+
+                            <div class="menu-item-content">
+
+                                <h3>Cheesecake</h3>
+
+                                <p>
+                                    Creamy cheesecake with a delicious
+                                    smooth texture.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦3,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Cheesecake"
+                                        data-price="3000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="desserts">
+
+                            <div class="menu-item-content">
+
+                                <h3>Ice Cream</h3>
+
+                                <p>
+                                    Cold and creamy ice cream.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦1,500</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Ice Cream"
+                                        data-price="1500"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="desserts">
+
+                            <div class="menu-item-content">
+
+                                <h3>Brownie</h3>
+
+                                <p>
+                                    Soft, rich and chocolatey brownie.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦2,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Brownie"
+                                        data-price="2000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="menu-item" data-category="desserts">
+
+                            <div class="menu-item-content">
+
+                                <h3>Fruit Salad</h3>
+
+                                <p>
+                                    Fresh mixed fruits for a lighter
+                                    sweet treat.
+                                </p>
+
+                                <div class="menu-item-bottom">
+
+                                    <strong>₦2,000</strong>
+
+                                    <button
+                                        type="button"
+                                        class="add-to-cart"
+                                        data-name="Fruit Salad"
+                                        data-price="2000"
+                                    >
+                                        Add to Cart
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CART
+        ================================================== -->
+
+        <section class="cart-section" id="cartSection">
+
+            <div class="container">
+
+                <div class="cart-heading">
+
+                    <span>🛒</span>
+
+                    <div>
+                        <h2>Your Order</h2>
+
+                        <p>
+                            Review your selected meals before checkout.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div id="cartItems">
+
+                    <p>
+                        Your cart is empty. Add something delicious
+                        from the menu.
+                    </p>
+
+                </div>
+
+
+                <div class="cart-summary">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cartTotal">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="checkout.html"
+                    class="checkout-btn"
+                >
+                    Proceed to Checkout →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CTA
+        ================================================== -->
+
+        <section class="menu-cta">
+
+            <div class="container">
+
+                <h2>
+                    Ready to Enjoy Something Delicious?
+                </h2>
+
+                <p>
+                    Choose your favourite meals and place your order
+                    today.
+                </p>
+
+                <a
+                    href="#cartSection"
+                    class="cta-button"
+                >
+                    View My Cart
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
          FOOTER
-    ========================== -->
+    ================================================== -->
 
-    <footer>
+    <footer class="site-footer">
 
-        <p>
-            &copy; 2026 Tasty Bites Restaurant.
-            All Rights Reserved.
-        </p>
+        <div class="container">
 
-        <p>
-            Designed by Abdul Wahab
-        </p>
+            <div class="footer-grid">
+
+                <div class="footer-column">
+
+                    <h3>
+                        🍴 Tasty Bites
+                    </h3>
+
+                    <p>
+                        Delicious food, made with passion.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact Us
+                    </h3>
+
+                    <p>
+                        📍 Ikorodu, Lagos, Nigeria
+                    </p>
+
+                    <p>
+                        📞
+                        <a href="tel:08060707486">
+                            08060707486
+                        </a>
+                    </p>
+
+                    <p>
+                        ✉️
+                        <a href="mailto:abdulwahabajose03@gmail.com">
+                            abdulwahabajose03@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="reservation.html">Reservation</a>
+                    <a href="delivery.html">Delivery</a>
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="year">2026</span>
+                    Tasty Bites Restaurant.
+                    All Rights Reserved.
+                </p>
+
+                <p>
+                    Designed by Abdul Wahab
+                </p>
+
+            </div>
+
+        </div>
 
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+    <!-- ==================================================
+         EXISTING JAVASCRIPT
+         DO NOT CHANGE java.js
+    ================================================== -->
 
-    <script src="/Restaurant-/css/javascript/java.js"></script>
+    <script src="css/javascript/java.js"></script>
+<!-- FLOATING CHECKOUT -->
+<div class="floating-checkout-bar" id="floatingCheckoutBar">
+
+    <div class="floating-cart-info">
+        <span>🛒</span>
+
+        <div>
+            <strong>Your Cart</strong>
+            <small>
+                <span id="floatingCartCount">0</span>
+                item(s) ·
+                <span id="floatingCartTotal">₦0</span>
+            </small>
+        </div>
+    </div>
+
+    <a href="checkout.html" class="floating-checkout-button">
+        Checkout →
+    </a>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const floatingBar =
+        document.getElementById("floatingCheckoutBar");
+
+    const floatingCount =
+        document.getElementById("floatingCartCount");
+
+    const floatingTotal =
+        document.getElementById("floatingCartTotal");
+
+    function updateFloatingCheckout() {
+
+        let cart = [];
+
+        try {
+            cart = JSON.parse(
+                localStorage.getItem("tastyBitesCart")
+            ) || [];
+        } catch (error) {
+            cart = [];
+        }
+
+        let totalItems = 0;
+        let totalPrice = 0;
+
+        cart.forEach(function (item) {
+
+            const quantity = Number(item.quantity) || 0;
+            const price = Number(item.price) || 0;
+
+            totalItems += quantity;
+            totalPrice += price * quantity;
+
+        });
+
+        floatingCount.textContent = totalItems;
+
+        floatingTotal.textContent =
+            "₦" + totalPrice.toLocaleString("en-NG");
+
+        if (totalItems > 0) {
+            floatingBar.classList.add("visible");
+        } else {
+            floatingBar.classList.remove("visible");
+        }
+    }
+
+    updateFloatingCheckout();
+
+    setInterval(updateFloatingCheckout, 300);
+
+});
+</script>
 
 </body>
 

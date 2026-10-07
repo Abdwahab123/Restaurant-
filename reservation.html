@@ -1,129 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation</title>
+
+    <title>Reservation | Tasty Bites Restaurant</title>
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png">
+
+    <!-- TASTY BITES FAVICON — DO NOT CHANGE -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://i.ibb.co/NdqWKNHB/B29-E8821-B518-4391-AA75-56980-D4-BD2-D9.png"
+        id="2misrt"
+    >
 </head>
+
 <body>
 
-<h1>📅 Reserve Your Table</h1>
+    <!-- ================= HEADER ================= -->
 
-<p>
-Welcome to Tasty Bites Restaurant. Reserve your table in advance and enjoy a comfortable dining experience with family, friends, or colleagues. For reservations or inquiries, call <strong>08060707486</strong> or email us at <strong>abdulwahabajose03@gmail.com</strong>. We look forward to serving you.
-</p>
+    <header class="site-header">
 
-<hr>
+        <div class="container">
 
-<h2>🍽️ Enjoy Fine Dining</h2>
+            <div class="logo">
+                <a href="index.html">
+                    🍴 Tasty Bites
+                </a>
+            </div>
 
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"
-alt="Restaurant Dining Area" width="320">
+            <nav>
 
-<p>
-Relax in our elegant dining area while enjoying freshly prepared meals and outstanding customer service.
-</p>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="reservation.html" class="active">Reservation</a>
+                <a href="delivery.html">Delivery</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="team.html">Team</a>
+                <a href="testimonials.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
 
-<hr>
+            </nav>
 
-<h2>🎉 Celebrate Special Occasions</h2>
+        </div>
 
-<img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600"
-alt="Celebration" width="320">
+    </header>
 
-<p>
-Celebrate birthdays, anniversaries, graduations, family dinners, and business meetings in a warm and welcoming environment.
-</p>
 
-<hr>
+    <!-- ================= HERO ================= -->
 
-<h2>📝 Reservation Form</h2>
+    <section class="page-hero">
 
-<form action="https://formspree.io/f/mwvgjkdp" method="POST">
+        <div class="container">
 
-<input type="hidden" name="_next" value="https://abdwahab123.github.io/Restaurant-/thankyou.html">
+            <span class="hero-tag">📅 RESERVE YOUR TABLE</span>
 
-<label for="fullname"><strong>Full Name:</strong></label><br>
-<input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br><br>
+            <h1>Book Your Table</h1>
 
-<label for="email"><strong>Email Address:</strong></label><br>
-<input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+            <p>
+                Make your dining experience special by reserving
+                your table with us today.
+            </p>
 
-<label for="phone"><strong>Phone Number:</strong></label><br>
-<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+        </div>
 
-<label for="guests"><strong>Number of Guests:</strong></label><br>
-<input type="number" id="guests" name="guests" min="1" max="20" required><br><br>
+    </section>
 
-<label for="date"><strong>Reservation Date:</strong></label><br>
-<input type="date" id="date" name="date" required><br><br>
 
-<label for="time"><strong>Reservation Time:</strong></label><br>
-<input type="time" id="time" name="time" required><br><br>
+    <!-- ================= INTRO ================= -->
 
-<label for="requests"><strong>Special Requests:</strong></label><br>
-<textarea id="requests" name="requests" rows="4" cols="40" placeholder="Any special requests?"></textarea><br><br>
+    <section class="reservation-intro">
 
-<input type="submit" value="Reserve Table">
+        <div class="container">
 
-</form>
+            <h2>Enjoy a Memorable Dining Experience</h2>
 
-<hr>
+            <p>
+                Whether you're planning a family dinner, a romantic
+                evening, a birthday celebration or a business meeting,
+                Tasty Bites is ready to welcome you.
+            </p>
 
-<h2>🌟 Why Reserve With Us?</h2>
+        </div>
 
-<p>✔ Comfortable dining environment.</p>
-<p>✔ Friendly and professional staff.</p>
-<p>✔ Freshly prepared meals made with quality ingredients.</p>
-<p>✔ Perfect venue for birthdays, anniversaries, meetings, and celebrations.</p>
-<p>✔ Quick and easy reservation process.</p>
+    </section>
 
-<hr>
 
-<h2>📞 Contact Information</h2>
+    <!-- ================= RESERVATION AREA ================= -->
 
-<p><strong>Phone:</strong> 08060707486</p>
+    <section class="reservation-section">
 
-<p><strong>Email:</strong> abdulwahabajose03@gmail.com</p>
+        <div class="container">
 
-<p><strong>Address:</strong> Victoria Island, Lagos, Nigeria.</p>
+            <div class="reservation-layout">
 
-<p><strong>Opening Hours:</strong> Monday – Sunday (9:00 AM – 10:00 PM)</p>
 
-<hr>
+                <!-- ================= INFO ================= -->
 
-<h2>🧭 Quick Navigation</h2>
+                <div class="reservation-info">
 
-<nav>
+                    <span class="section-tag">
+                        ✨ TASTY BITES
+                    </span>
 
-<a href="index.html">🏠 Home</a>
-<a href="about.html">📖 About</a>
-<a href="menu.html">🍽 Menu</a>
-<a href="services.html">🛎 Services</a>
-<a href="gallery.html">📸 Gallery</a>
-<a href="reservation.html">📅 Reservation</a>
-<a href="delivery.html">🚚 Delivery</a>
-<a href="team.html">👨‍🍳 Team</a>
-<a href="testimonials.html">⭐ Reviews</a>
-<a href="contact.html">📞 Contact</a>
-<a href="faq.html">❓ FAQ</a>
+                    <h2>
+                        Your Table Is Waiting
+                    </h2>
 
-</nav>
+                    <p>
+                        Reserve your table in advance and enjoy
+                        freshly prepared meals, friendly service
+                        and a comfortable atmosphere.
+                    </p>
 
-<hr>
 
-<p>
-<a href="index.html">⬅ Back to Home</a>
-</p>
+                    <div class="reservation-feature">
 
-<hr>
+                        <span>🍽️</span>
 
-<footer>
-    <p>&copy; 2026 Tasty Bites Restaurant. All Rights Reserved.</p>
-    <p>Designed by Abdul Wahab</p>
-</footer>
+                        <div>
+                            <h3>Delicious Food</h3>
+
+                            <p>
+                                Freshly prepared meals made with
+                                quality ingredients.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="reservation-feature">
+
+                        <span>👨‍👩‍👧‍👦</span>
+
+                        <div>
+                            <h3>Perfect for Everyone</h3>
+
+                            <p>
+                                Great for families, friends,
+                                couples and business meetings.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="reservation-feature">
+
+                        <span>⭐</span>
+
+                        <div>
+                            <h3>Great Experience</h3>
+
+                            <p>
+                                Enjoy excellent food and welcoming
+                                customer service.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="reservation-contact">
+
+                        <h3>Need Help?</h3>
+
+                        <p>
+                            📞 <strong>08060707486</strong>
+                        </p>
+
+                        <p>
+                            📧 <strong>
+                                abdulwahabajose03@gmail.com
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= FORM ================= -->
+
+                <div class="reservation-form-card">
+
+                    <div class="form-heading">
+
+                        <span>📝</span>
+
+                        <div>
+                            <h2>Reserve Your Table</h2>
+
+                            <p>
+                                Fill in your details below.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        action="https://formspree.io/f/mwvgjkdp"
+                        method="POST"
+                    >
+
+                        <!-- Redirect after successful submission -->
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://abdwahab123.github.io/Restaurant-/thankyou.html"
+                        >
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="form-group">
+
+                            <label for="fullname">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullname"
+                                name="fullname"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- GUESTS -->
+
+                        <div class="form-group">
+
+                            <label for="guests">
+                                Number of Guests
+                            </label>
+
+                            <input
+                                type="number"
+                                id="guests"
+                                name="guests"
+                                min="1"
+                                max="20"
+                                placeholder="e.g. 4"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DATE AND TIME -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="date">
+                                    Reservation Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="date"
+                                    name="date"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="time">
+                                    Reservation Time
+                                </label>
+
+                                <input
+                                    type="time"
+                                    id="time"
+                                    name="time"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SPECIAL REQUEST -->
+
+                        <div class="form-group">
+
+                            <label for="requests">
+                                Special Requests
+                            </label>
+
+                            <textarea
+                                id="requests"
+                                name="requests"
+                                rows="5"
+                                placeholder="Birthday, anniversary, special seating, dietary requests, etc."
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="reservation-submit"
+                        >
+                            📅 Reserve My Table
+                        </button>
+
+
+                        <p class="form-note">
+                            🔒 Your information is only used to
+                            process your reservation.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY RESERVE ================= -->
+
+    <section class="why-reserve">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    ❤️ WHY CHOOSE US
+                </span>
+
+                <h2>
+                    Make Your Visit Special
+                </h2>
+
+                <p>
+                    Everything is prepared to give you a
+                    comfortable and enjoyable dining experience.
+                </p>
+
+            </div>
+
+
+            <div class="benefits-grid">
+
+
+                <div class="benefit-card">
+
+                    <div class="benefit-icon">
+                        🍴
+                    </div>
+
+                    <h3>Quality Meals</h3>
+
+                    <p>
+                        Enjoy delicious meals prepared with
+                        fresh and quality ingredients.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit-card">
+
+                    <div class="benefit-icon">
+                        🪑
+                    </div>
+
+                    <h3>Comfortable Space</h3>
+
+                    <p>
+                        Relax and enjoy your meal in a welcoming
+                        dining environment.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit-card">
+
+                    <div class="benefit-icon">
+                        👨‍🍳
+                    </div>
+
+                    <h3>Professional Service</h3>
+
+                    <p>
+                        Our team is committed to giving you
+                        excellent customer service.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit-card">
+
+                    <div class="benefit-icon">
+                        🎉
+                    </div>
+
+                    <h3>Special Events</h3>
+
+                    <p>
+                        Perfect for birthdays, anniversaries,
+                        meetings and celebrations.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="reservation-contact-section">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>
+                    Have Questions About Your Reservation?
+                </h2>
+
+                <p>
+                    Contact us and our team will be happy to help.
+                </p>
+
+                <div class="contact-actions">
+
+                    <a
+                        href="tel:08060707486"
+                        class="btn"
+                    >
+                        📞 Call Us
+                    </a>
+
+                    <a
+                        href="mailto:abdulwahabajose03@gmail.com"
+                        class="btn"
+                    >
+                        📧 Email Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+
+                <div class="footer-brand">
+
+                    <h3>🍴 Tasty Bites</h3>
+
+                    <p>
+                        Delicious food, great service and
+                        memorable experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <h4>Quick Links</h4>
+
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+
+                <div class="footer-contact">
+
+                    <h4>Contact Us</h4>
+
+                    <p>
+                        📍 Ikorodu, Lagos, Nigeria
+                    </p>
+
+                    <p>
+                        📞
+                        <a href="tel:08060707486">
+                            08060707486
+                        </a>
+                    </p>
+
+                    <p>
+                        📧
+                        <a href="mailto:abdulwahabajose03@gmail.com">
+                            abdulwahabajose03@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; 2026 Tasty Bites Restaurant.
+                    All Rights Reserved.
+                </p>
+
+                <p>
+                    Designed by Abdul Wahab
+                </p>
+
+                 <p>
+                    © <span id="year">2026</span>
+                    Tasty Bites Restaurant.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- EXISTING JAVASCRIPT — DO NOT CHANGE -->
+
+    <script src="css/javascript/java.js"></script>
 
 </body>
+
 </html>

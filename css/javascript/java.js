@@ -51,30 +51,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuButton.id = "mobileMenuButton";
         menuButton.innerHTML = "☰";
-        menuButton.setAttribute("aria-label", "Open navigation menu");
+        menuButton.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
 
-        nav.parentNode.insertBefore(menuButton, nav);
+        nav.parentNode.insertBefore(
+            menuButton,
+            nav
+        );
 
-        menuButton.addEventListener("click", function () {
+        menuButton.addEventListener(
+            "click",
+            function () {
 
-            nav.classList.toggle("mobile-open");
+                nav.classList.toggle(
+                    "mobile-open"
+                );
 
-            if (nav.classList.contains("mobile-open")) {
-                menuButton.innerHTML = "✕";
-            } else {
-                menuButton.innerHTML = "☰";
+                if (
+                    nav.classList.contains(
+                        "mobile-open"
+                    )
+                ) {
+
+                    menuButton.innerHTML = "✕";
+
+                } else {
+
+                    menuButton.innerHTML = "☰";
+
+                }
+
             }
-
-        });
+        );
 
         navigationLinks.forEach(function (link) {
 
-            link.addEventListener("click", function () {
+            link.addEventListener(
+                "click",
+                function () {
 
-                nav.classList.remove("mobile-open");
-                menuButton.innerHTML = "☰";
+                    nav.classList.remove(
+                        "mobile-open"
+                    );
 
-            });
+                    menuButton.innerHTML = "☰";
+
+                }
+            );
 
         });
 
@@ -85,104 +110,182 @@ document.addEventListener("DOMContentLoaded", function () {
     // 4. BACK TO TOP BUTTON
     // ==================================================
 
-    let backToTop = document.querySelector("#backToTop");
+    let backToTop =
+        document.querySelector("#backToTop");
 
     if (!backToTop) {
 
-        backToTop = document.createElement("button");
+        backToTop =
+            document.createElement("button");
 
         backToTop.id = "backToTop";
         backToTop.innerHTML = "⬆️";
         backToTop.title = "Back to top";
 
-        document.body.appendChild(backToTop);
+        document.body.appendChild(
+            backToTop
+        );
 
     }
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener(
+        "scroll",
+        function () {
 
-        if (window.scrollY > 400) {
-            backToTop.style.display = "block";
-        } else {
-            backToTop.style.display = "none";
+            if (window.scrollY > 400) {
+
+                backToTop.style.display =
+                    "block";
+
+            } else {
+
+                backToTop.style.display =
+                    "none";
+
+            }
+
         }
+    );
 
-    });
+    backToTop.addEventListener(
+        "click",
+        function () {
 
-    backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
+        }
+    );
 
 
     // ==================================================
     // 5. DARK MODE
     // ==================================================
 
-    const darkModeButton = document.createElement("button");
+    const darkModeButton =
+        document.createElement("button");
 
-    darkModeButton.id = "darkModeButton";
-    darkModeButton.innerHTML = "🌙";
-    darkModeButton.title = "Toggle dark mode";
+    darkModeButton.id =
+        "darkModeButton";
 
-    document.body.appendChild(darkModeButton);
+    darkModeButton.innerHTML =
+        "🌙";
 
-    const savedTheme = localStorage.getItem("tastyBitesTheme");
+    darkModeButton.title =
+        "Toggle dark mode";
+
+    document.body.appendChild(
+        darkModeButton
+    );
+
+    const savedTheme =
+        localStorage.getItem(
+            "tastyBitesTheme"
+        );
 
     if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        darkModeButton.innerHTML = "☀️";
+
+        document.body.classList.add(
+            "dark-mode"
+        );
+
+        darkModeButton.innerHTML =
+            "☀️";
+
     }
 
-    darkModeButton.addEventListener("click", function () {
+    darkModeButton.addEventListener(
+        "click",
+        function () {
 
-        document.body.classList.toggle("dark-mode");
+            document.body.classList.toggle(
+                "dark-mode"
+            );
 
-        if (document.body.classList.contains("dark-mode")) {
+            if (
+                document.body.classList.contains(
+                    "dark-mode"
+                )
+            ) {
 
-            localStorage.setItem("tastyBitesTheme", "dark");
-            darkModeButton.innerHTML = "☀️";
+                localStorage.setItem(
+                    "tastyBitesTheme",
+                    "dark"
+                );
 
-        } else {
+                darkModeButton.innerHTML =
+                    "☀️";
 
-            localStorage.setItem("tastyBitesTheme", "light");
-            darkModeButton.innerHTML = "🌙";
+            } else {
+
+                localStorage.setItem(
+                    "tastyBitesTheme",
+                    "light"
+                );
+
+                darkModeButton.innerHTML =
+                    "🌙";
+
+            }
 
         }
-
-    });
+    );
 
 
     // ==================================================
     // 6. NOTIFICATION SYSTEM
     // ==================================================
 
-    function showNotification(message, type = "success") {
+    function showNotification(
+        message,
+        type = "success"
+    ) {
 
-        const notification = document.createElement("div");
+        const notification =
+            document.createElement("div");
 
-        notification.className = "notification " + type;
-        notification.textContent = message;
+        notification.className =
+            "notification " + type;
 
-        document.body.appendChild(notification);
+        notification.textContent =
+            message;
 
-        setTimeout(function () {
-            notification.classList.add("show");
-        }, 50);
+        document.body.appendChild(
+            notification
+        );
 
-        setTimeout(function () {
+        setTimeout(
+            function () {
 
-            notification.classList.remove("show");
+                notification.classList.add(
+                    "show"
+                );
 
-            setTimeout(function () {
-                notification.remove();
-            }, 400);
+            },
+            50
+        );
 
-        }, 3000);
+        setTimeout(
+            function () {
+
+                notification.classList.remove(
+                    "show"
+                );
+
+                setTimeout(
+                    function () {
+
+                        notification.remove();
+
+                    },
+                    400
+                );
+
+            },
+            3000
+        );
 
     }
 
@@ -191,72 +294,97 @@ document.addEventListener("DOMContentLoaded", function () {
     // 7. FORM VALIDATION
     // ==================================================
 
-    const forms = document.querySelectorAll("form");
+    const forms =
+        document.querySelectorAll("form");
 
     forms.forEach(function (form) {
 
-        form.addEventListener("submit", function (event) {
+        form.addEventListener(
+            "submit",
+            function (event) {
 
-            let valid = true;
+                let valid = true;
 
-            const requiredFields =
-                form.querySelectorAll("[required]");
+                const requiredFields =
+                    form.querySelectorAll(
+                        "[required]"
+                    );
 
-            requiredFields.forEach(function (field) {
+                requiredFields.forEach(
+                    function (field) {
 
-                if (field.value.trim() === "") {
+                        if (
+                            field.value.trim() === ""
+                        ) {
 
-                    valid = false;
+                            valid = false;
 
-                    field.classList.add("input-error");
+                            field.classList.add(
+                                "input-error"
+                            );
 
-                } else {
+                        } else {
 
-                    field.classList.remove("input-error");
+                            field.classList.remove(
+                                "input-error"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                // Email validation
+
+                const email =
+                    form.querySelector(
+                        'input[type="email"]'
+                    );
+
+                if (
+                    email &&
+                    email.value.trim() !== ""
+                ) {
+
+                    const emailPattern =
+                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                    if (
+                        !emailPattern.test(
+                            email.value
+                        )
+                    ) {
+
+                        valid = false;
+
+                        email.classList.add(
+                            "input-error"
+                        );
+
+                        showNotification(
+                            "Please enter a valid email address.",
+                            "error"
+                        );
+
+                    }
 
                 }
 
-            });
 
+                if (!valid) {
 
-            // Email validation
-
-            const email =
-                form.querySelector('input[type="email"]');
-
-            if (email && email.value.trim() !== "") {
-
-                const emailPattern =
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!emailPattern.test(email.value)) {
-
-                    valid = false;
-
-                    email.classList.add("input-error");
+                    event.preventDefault();
 
                     showNotification(
-                        "Please enter a valid email address.",
+                        "Please complete all required fields.",
                         "error"
                     );
 
                 }
 
             }
-
-
-            if (!valid) {
-
-                event.preventDefault();
-
-                showNotification(
-                    "Please complete all required fields.",
-                    "error"
-                );
-
-            }
-
-        });
+        );
 
     });
 
@@ -266,19 +394,29 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==================================================
 
     const dateInputs =
-        document.querySelectorAll('input[type="date"]');
+        document.querySelectorAll(
+            'input[type="date"]'
+        );
 
     dateInputs.forEach(function (input) {
 
         const today = new Date();
 
-        const year = today.getFullYear();
-        const month =
-            String(today.getMonth() + 1).padStart(2, "0");
-        const day =
-            String(today.getDate()).padStart(2, "0");
+        const year =
+            today.getFullYear();
 
-        input.min = `${year}-${month}-${day}`;
+        const month =
+            String(
+                today.getMonth() + 1
+            ).padStart(2, "0");
+
+        const day =
+            String(
+                today.getDate()
+            ).padStart(2, "0");
+
+        input.min =
+            `${year}-${month}-${day}`;
 
     });
 
@@ -288,36 +426,57 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==================================================
 
     const searchInput =
-        document.querySelector("#menuSearch");
+        document.querySelector(
+            "#menuSearch"
+        );
 
     const menuItems =
-        document.querySelectorAll(".menu-item");
+        document.querySelectorAll(
+            ".menu-item"
+        );
 
-    if (searchInput && menuItems.length > 0) {
+    if (
+        searchInput &&
+        menuItems.length > 0
+    ) {
 
-        searchInput.addEventListener("input", function () {
+        searchInput.addEventListener(
+            "input",
+            function () {
 
-            const searchTerm =
-                searchInput.value.toLowerCase().trim();
+                const searchTerm =
+                    searchInput.value
+                        .toLowerCase()
+                        .trim();
 
-            menuItems.forEach(function (item) {
+                menuItems.forEach(
+                    function (item) {
 
-                const text =
-                    item.textContent.toLowerCase();
+                        const text =
+                            item.textContent
+                                .toLowerCase();
 
-                if (text.includes(searchTerm)) {
+                        if (
+                            text.includes(
+                                searchTerm
+                            )
+                        ) {
 
-                    item.style.display = "";
+                            item.style.display =
+                                "";
 
-                } else {
+                        } else {
 
-                    item.style.display = "none";
+                            item.style.display =
+                                "none";
 
-                }
+                        }
 
-            });
+                    }
+                );
 
-        });
+            }
+        );
 
     }
 
@@ -327,44 +486,67 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==================================================
 
     const filterButtons =
-        document.querySelectorAll(".filter-btn");
+        document.querySelectorAll(
+            ".filter-btn"
+        );
 
-    filterButtons.forEach(function (button) {
+    filterButtons.forEach(
+        function (button) {
 
-        button.addEventListener("click", function () {
+            button.addEventListener(
+                "click",
+                function () {
 
-            const category =
-                button.getAttribute("data-category");
+                    const category =
+                        button.getAttribute(
+                            "data-category"
+                        );
 
-            filterButtons.forEach(function (btn) {
-                btn.classList.remove("selected");
-            });
+                    filterButtons.forEach(
+                        function (btn) {
 
-            button.classList.add("selected");
+                            btn.classList.remove(
+                                "selected"
+                            );
 
-            menuItems.forEach(function (item) {
+                        }
+                    );
 
-                const itemCategory =
-                    item.getAttribute("data-category");
+                    button.classList.add(
+                        "selected"
+                    );
 
-                if (
-                    category === "all" ||
-                    category === itemCategory
-                ) {
+                    menuItems.forEach(
+                        function (item) {
 
-                    item.style.display = "";
+                            const itemCategory =
+                                item.getAttribute(
+                                    "data-category"
+                                );
 
-                } else {
+                            if (
+                                category === "all" ||
+                                category === itemCategory
+                            ) {
 
-                    item.style.display = "none";
+                                item.style.display =
+                                    "";
+
+                            } else {
+
+                                item.style.display =
+                                    "none";
+
+                            }
+
+                        }
+                    );
 
                 }
+            );
 
-            });
-
-        });
-
-    });
+        }
+    );
 
 
     // ==================================================
@@ -372,7 +554,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==================================================
 
     let cart =
-        JSON.parse(localStorage.getItem("tastyBitesCart")) || [];
+        JSON.parse(
+            localStorage.getItem(
+                "tastyBitesCart"
+            )
+        ) || [];
 
 
     function saveCart() {
@@ -385,12 +571,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    function addToCart(name, price) {
+    function addToCart(
+        name,
+        price
+    ) {
 
         const existingItem =
-            cart.find(function (item) {
-                return item.name === name;
-            });
+            cart.find(
+                function (item) {
+
+                    return item.name === name;
+
+                }
+            );
 
 
         if (existingItem) {
@@ -400,9 +593,13 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
 
             cart.push({
+
                 name: name,
+
                 price: Number(price),
+
                 quantity: 1
+
             });
 
         }
@@ -420,22 +617,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function removeFromCart(index) {
 
-        cart.splice(index, 1);
+        cart.splice(
+            index,
+            1
+        );
 
         saveCart();
 
         updateCart();
 
+        updateMenuQuantityControls();
+
     }
 
 
-    function changeQuantity(index, amount) {
+    function changeQuantity(
+        index,
+        amount
+    ) {
 
-        cart[index].quantity += amount;
+        if (!cart[index]) {
+            return;
+        }
 
-        if (cart[index].quantity <= 0) {
+        cart[index].quantity +=
+            amount;
 
-            cart.splice(index, 1);
+        if (
+            cart[index].quantity <= 0
+        ) {
+
+            cart.splice(
+                index,
+                1
+            );
 
         }
 
@@ -443,28 +658,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateCart();
 
+        updateMenuQuantityControls();
+
     }
 
 
     function updateCart() {
 
         const cartContainer =
-            document.querySelector("#cartItems");
+            document.querySelector(
+                "#cartItems"
+            );
 
         const cartCount =
-            document.querySelector("#cartCount");
+            document.querySelector(
+                "#cartCount"
+            );
 
         const cartTotal =
-            document.querySelector("#cartTotal");
+            document.querySelector(
+                "#cartTotal"
+            );
 
 
         let total = 0;
+
         let count = 0;
 
 
         if (cartContainer) {
 
-            cartContainer.innerHTML = "";
+            cartContainer.innerHTML =
+                "";
+
 
             if (cart.length === 0) {
 
@@ -474,93 +700,145 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            cart.forEach(function (item, index) {
+            cart.forEach(
+                function (
+                    item,
+                    index
+                ) {
 
-                const itemTotal =
-                    item.price * item.quantity;
+                    const itemTotal =
+                        item.price *
+                        item.quantity;
 
-                total += itemTotal;
+                    total +=
+                        itemTotal;
 
-                count += item.quantity;
-
-
-                const cartItem =
-                    document.createElement("div");
-
-                cartItem.className = "cart-item";
-
-
-                cartItem.innerHTML = `
-                    <h3>${item.name}</h3>
-
-                    <p>
-                        \u20A6${item.price.toLocaleString()}
-                    </p>
-
-                    <button class="quantity-minus">
-                        −
-                    </button>
-
-                    <span>${item.quantity}</span>
-
-                    <button class="quantity-plus">
-                        +
-                    </button>
-
-                    <p>
-                        Subtotal:
-                        \u20A6${itemTotal.toLocaleString()}
-                    </p>
-
-                    <button class="remove-item">
-                        Remove
-                    </button>
-                `;
+                    count +=
+                        item.quantity;
 
 
-                cartItem
-                    .querySelector(".quantity-minus")
-                    .addEventListener("click", function () {
+                    const cartItem =
+                        document.createElement(
+                            "div"
+                        );
 
-                        changeQuantity(index, -1);
-
-                    });
-
-
-                cartItem
-                    .querySelector(".quantity-plus")
-                    .addEventListener("click", function () {
-
-                        changeQuantity(index, 1);
-
-                    });
+                    cartItem.className =
+                        "cart-item";
 
 
-                cartItem
-                    .querySelector(".remove-item")
-                    .addEventListener("click", function () {
+                    cartItem.innerHTML = `
+                        <h3>
+                            ${item.name}
+                        </h3>
 
-                        removeFromCart(index);
+                        <p>
+                            ₦${item.price.toLocaleString()}
+                        </p>
 
-                    });
+                        <button
+                            type="button"
+                            class="quantity-minus"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            type="button"
+                            class="quantity-plus"
+                        >
+                            +
+                        </button>
+
+                        <p>
+                            Subtotal:
+                            ₦${itemTotal.toLocaleString()}
+                        </p>
+
+                        <button
+                            type="button"
+                            class="remove-item"
+                        >
+                            Remove
+                        </button>
+                    `;
 
 
-                cartContainer.appendChild(cartItem);
+                    cartItem
+                        .querySelector(
+                            ".quantity-minus"
+                        )
+                        .addEventListener(
+                            "click",
+                            function () {
 
-            });
+                                changeQuantity(
+                                    index,
+                                    -1
+                                );
+
+                            }
+                        );
+
+
+                    cartItem
+                        .querySelector(
+                            ".quantity-plus"
+                        )
+                        .addEventListener(
+                            "click",
+                            function () {
+
+                                changeQuantity(
+                                    index,
+                                    1
+                                );
+
+                            }
+                        );
+
+
+                    cartItem
+                        .querySelector(
+                            ".remove-item"
+                        )
+                        .addEventListener(
+                            "click",
+                            function () {
+
+                                removeFromCart(
+                                    index
+                                );
+
+                            }
+                        );
+
+
+                    cartContainer.appendChild(
+                        cartItem
+                    );
+
+                }
+            );
 
         }
 
 
         if (cartCount) {
-            cartCount.textContent = count;
+
+            cartCount.textContent =
+                count;
+
         }
 
 
         if (cartTotal) {
 
             cartTotal.textContent =
-                `\u20A6${total.toLocaleString()}`;
+                `₦${total.toLocaleString()}`;
 
         }
 
@@ -568,167 +846,559 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==================================================
-    // 12. ADD-TO-CART BUTTONS
+    // 12. MENU CARD QUANTITY CONTROLS
     // ==================================================
 
-    const addButtons =
-        document.querySelectorAll(".add-to-cart");
+    function updateMenuQuantityControls() {
+
+        const menuItems =
+            document.querySelectorAll(
+                ".menu-item"
+            );
+
+        menuItems.forEach(
+            function (menuItem) {
+
+                const addButton =
+                    menuItem.querySelector(
+                        ".add-to-cart"
+                    );
+
+                const quantityControls =
+                    menuItem.querySelector(
+                        ".menu-quantity-controls"
+                    );
 
 
-    addButtons.forEach(function (button) {
+                let name = null;
 
-        button.addEventListener("click", function () {
-
-            const name =
-                button.getAttribute("data-name");
-
-            const price =
-                button.getAttribute("data-price");
+                let price = null;
 
 
-            if (!name || !price) {
+                if (addButton) {
 
-                showNotification(
-                    "Please add the food name and price.",
-                    "error"
+                    name =
+                        addButton.getAttribute(
+                            "data-name"
+                        );
+
+                    price =
+                        addButton.getAttribute(
+                            "data-price"
+                        );
+
+                } else if (
+                    quantityControls
+                ) {
+
+                    name =
+                        quantityControls.getAttribute(
+                            "data-name"
+                        );
+
+                    price =
+                        quantityControls.getAttribute(
+                            "data-price"
+                        );
+
+                }
+
+
+                if (!name) {
+                    return;
+                }
+
+
+                const existingItem =
+                    cart.find(
+                        function (item) {
+
+                            return (
+                                item.name === name
+                            );
+
+                        }
+                    );
+
+
+                // ITEM IS IN CART
+
+                if (existingItem) {
+
+                    if (!quantityControls) {
+
+                        const controls =
+                            document.createElement(
+                                "div"
+                            );
+
+                        controls.className =
+                            "menu-quantity-controls";
+
+                        controls.setAttribute(
+                            "data-name",
+                            name
+                        );
+
+                        controls.setAttribute(
+                            "data-price",
+                            price
+                        );
+
+
+                        controls.innerHTML = `
+
+                            <button
+                                type="button"
+                                class="menu-card-minus"
+                            >
+                                −
+                            </button>
+
+                            <span
+                                class="menu-card-quantity"
+                            >
+                                ${existingItem.quantity}
+                            </span>
+
+                            <button
+                                type="button"
+                                class="menu-card-plus"
+                            >
+                                +
+                            </button>
+
+                        `;
+
+
+                        if (addButton) {
+
+                            addButton.replaceWith(
+                                controls
+                            );
+
+                        }
+
+                    } else {
+
+                        const quantity =
+                            quantityControls.querySelector(
+                                ".menu-card-quantity"
+                            );
+
+                        if (quantity) {
+
+                            quantity.textContent =
+                                existingItem.quantity;
+
+                        }
+
+                    }
+
+                }
+
+
+                // ITEM IS NOT IN CART
+
+                else if (
+                    quantityControls
+                ) {
+
+                    const newButton =
+                        document.createElement(
+                            "button"
+                        );
+
+                    newButton.type =
+                        "button";
+
+                    newButton.className =
+                        "add-to-cart";
+
+                    newButton.setAttribute(
+                        "data-name",
+                        name
+                    );
+
+                    newButton.setAttribute(
+                        "data-price",
+                        price
+                    );
+
+                    newButton.textContent =
+                        "Add to Cart";
+
+
+                    quantityControls.replaceWith(
+                        newButton
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    // ==================================================
+    // 13. MENU CARD + / − BUTTONS
+    // ==================================================
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            // ADD TO CART
+
+            const addButton =
+                event.target.closest(
+                    ".add-to-cart"
                 );
+
+
+            if (addButton) {
+
+                const name =
+                    addButton.getAttribute(
+                        "data-name"
+                    );
+
+                const price =
+                    addButton.getAttribute(
+                        "data-price"
+                    );
+
+
+                if (!name || !price) {
+
+                    showNotification(
+                        "Please add the food name and price.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                addToCart(
+                    name,
+                    price
+                );
+
+                updateMenuQuantityControls();
 
                 return;
 
             }
 
 
-            addToCart(name, price);
+            // PLUS
 
-        });
+            const plusButton =
+                event.target.closest(
+                    ".menu-card-plus"
+                );
 
-    });
 
+            if (plusButton) {
+
+                const controls =
+                    plusButton.closest(
+                        ".menu-quantity-controls"
+                    );
+
+
+                if (!controls) {
+                    return;
+                }
+
+
+                const name =
+                    controls.getAttribute(
+                        "data-name"
+                    );
+
+
+                const index =
+                    cart.findIndex(
+                        function (item) {
+
+                            return (
+                                item.name === name
+                            );
+
+                        }
+                    );
+
+
+                if (index !== -1) {
+
+                    changeQuantity(
+                        index,
+                        1
+                    );
+
+                    updateMenuQuantityControls();
+
+                }
+
+                return;
+
+            }
+
+
+            // MINUS
+
+            const minusButton =
+                event.target.closest(
+                    ".menu-card-minus"
+                );
+
+
+            if (minusButton) {
+
+                const controls =
+                    minusButton.closest(
+                        ".menu-quantity-controls"
+                    );
+
+
+                if (!controls) {
+                    return;
+                }
+
+
+                const name =
+                    controls.getAttribute(
+                        "data-name"
+                    );
+
+
+                const index =
+                    cart.findIndex(
+                        function (item) {
+
+                            return (
+                                item.name === name
+                            );
+
+                        }
+                    );
+
+
+                if (index !== -1) {
+
+                    changeQuantity(
+                        index,
+                        -1
+                    );
+
+                    updateMenuQuantityControls();
+
+                }
+
+            }
+
+        }
+    );
+
+
+    // Restore saved quantities
+
+    updateMenuQuantityControls();
 
     updateCart();
 
 
     // ==================================================
-    // 13. FAQ ACCORDION
+    // 14. FAQ ACCORDION
     // ==================================================
 
     const faqQuestions =
-        document.querySelectorAll(".faq-question");
+        document.querySelectorAll(
+            ".faq-question"
+        );
 
 
-    faqQuestions.forEach(function (question) {
+    faqQuestions.forEach(
+        function (question) {
 
-        question.addEventListener("click", function () {
+            question.addEventListener(
+                "click",
+                function () {
 
-            const answer =
-                question.nextElementSibling;
-
-            const isOpen =
-                answer.classList.contains("faq-open");
-
-
-            document
-                .querySelectorAll(".faq-answer")
-                .forEach(function (item) {
-
-                    item.classList.remove("faq-open");
-
-                });
+                    const answer =
+                        question.nextElementSibling;
 
 
-            document
-                .querySelectorAll(".faq-question")
-                .forEach(function (item) {
-
-                    item.classList.remove("faq-active");
-
-                });
+                    const isOpen =
+                        answer.classList.contains(
+                            "faq-open"
+                        );
 
 
-            if (!isOpen) {
+                    document
+                        .querySelectorAll(
+                            ".faq-answer"
+                        )
+                        .forEach(
+                            function (item) {
 
-                answer.classList.add("faq-open");
+                                item.classList.remove(
+                                    "faq-open"
+                                );
 
-                question.classList.add("faq-active");
+                            }
+                        );
 
-            }
 
-        });
+                    document
+                        .querySelectorAll(
+                            ".faq-question"
+                        )
+                        .forEach(
+                            function (item) {
 
-    });
+                                item.classList.remove(
+                                    "faq-active"
+                                );
+
+                            }
+                        );
+
+
+                    if (!isOpen) {
+
+                        answer.classList.add(
+                            "faq-open"
+                        );
+
+                        question.classList.add(
+                            "faq-active"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
 
 
     // ==================================================
-    // 14. GALLERY LIGHTBOX
+    // 15. GALLERY LIGHTBOX
     // ==================================================
 
     const galleryImages =
-        document.querySelectorAll(".gallery img");
+        document.querySelectorAll(
+            ".gallery img"
+        );
 
 
     if (galleryImages.length > 0) {
 
         const lightbox =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        lightbox.id = "lightbox";
+        lightbox.id =
+            "lightbox";
 
 
         const closeButton =
-            document.createElement("button");
+            document.createElement(
+                "button"
+            );
 
-        closeButton.id = "lightboxClose";
-        closeButton.innerHTML = "✕";
+        closeButton.id =
+            "lightboxClose";
+
+        closeButton.innerHTML =
+            "✕";
 
 
         const lightboxImage =
-            document.createElement("img");
+            document.createElement(
+                "img"
+            );
 
 
-        lightbox.appendChild(closeButton);
-        lightbox.appendChild(lightboxImage);
+        lightbox.appendChild(
+            closeButton
+        );
 
-        document.body.appendChild(lightbox);
+        lightbox.appendChild(
+            lightboxImage
+        );
 
-
-        galleryImages.forEach(function (image) {
-
-            image.addEventListener("click", function () {
-
-                lightboxImage.src = image.src;
-
-                lightboxImage.alt =
-                    image.alt || "Tasty Bites food";
-
-                lightbox.classList.add("active");
-
-            });
-
-        });
+        document.body.appendChild(
+            lightbox
+        );
 
 
-        closeButton.addEventListener("click", function () {
+        galleryImages.forEach(
+            function (image) {
 
-            lightbox.classList.remove("active");
+                image.addEventListener(
+                    "click",
+                    function () {
 
-        });
+                        lightboxImage.src =
+                            image.src;
 
+                        lightboxImage.alt =
+                            image.alt ||
+                            "Tasty Bites food";
 
-        lightbox.addEventListener("click", function (event) {
+                        lightbox.classList.add(
+                            "active"
+                        );
 
-            if (event.target === lightbox) {
-
-                lightbox.classList.remove("active");
+                    }
+                );
 
             }
+        );
 
-        });
+
+        closeButton.addEventListener(
+            "click",
+            function () {
+
+                lightbox.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        lightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === lightbox
+                ) {
+
+                    lightbox.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
 
     }
 
 
     // ==================================================
-    // 15. SCROLL ANIMATIONS
+    // 16. SCROLL ANIMATIONS
     // ==================================================
 
     const animatedElements =
@@ -741,17 +1411,21 @@ document.addEventListener("DOMContentLoaded", function () {
         new IntersectionObserver(
             function (entries) {
 
-                entries.forEach(function (entry) {
+                entries.forEach(
+                    function (entry) {
 
-                    if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        entry.target.classList.add(
-                            "scroll-visible"
-                        );
+                            entry.target.classList.add(
+                                "scroll-visible"
+                            );
+
+                        }
 
                     }
-
-                });
+                );
 
             },
             {
@@ -760,121 +1434,159 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    animatedElements.forEach(function (element) {
+    animatedElements.forEach(
+        function (element) {
 
-        element.classList.add("scroll-hidden");
+            element.classList.add(
+                "scroll-hidden"
+            );
 
-        observer.observe(element);
+            observer.observe(
+                element
+            );
 
-    });
+        }
+    );
 
 
     // ==================================================
-    // 16. PHONE NUMBER CLICK
+    // 17. PHONE NUMBER CLICK
     // ==================================================
 
     const phoneNumbers =
-        document.querySelectorAll(".phone-number");
+        document.querySelectorAll(
+            ".phone-number"
+        );
 
 
-    phoneNumbers.forEach(function (phone) {
+    phoneNumbers.forEach(
+        function (phone) {
 
-        phone.addEventListener("click", function () {
+            phone.addEventListener(
+                "click",
+                function () {
 
-            showNotification(
-                "Calling Tasty Bites: 08060707486"
+                    showNotification(
+                        "Calling Tasty Bites: 08060707486"
+                    );
+
+                }
             );
 
-        });
-
-    });
+        }
+    );
 
 
     // ==================================================
-    // 17. SMOOTH INTERNAL LINKS
+    // 18. SMOOTH INTERNAL LINKS
     // ==================================================
 
     const internalLinks =
-        document.querySelectorAll('a[href^="#"]');
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
 
 
-    internalLinks.forEach(function (link) {
+    internalLinks.forEach(
+        function (link) {
 
-        link.addEventListener("click", function (event) {
+            link.addEventListener(
+                "click",
+                function (event) {
 
-            const targetID =
-                link.getAttribute("href");
-
-            if (targetID === "#") {
-                return;
-            }
-
-
-            const target =
-                document.querySelector(targetID);
+                    const targetID =
+                        link.getAttribute(
+                            "href"
+                        );
 
 
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
-
-            }
-
-        });
-
-    });
+                    if (targetID === "#") {
+                        return;
+                    }
 
 
-    // ==================================================
-    // 18. PREVENT DOUBLE SUBMISSION
-    // ==================================================
-
-    forms.forEach(function (form) {
-
-        form.addEventListener("submit", function () {
-
-            const submitButton =
-                form.querySelector(
-                    'button[type="submit"], input[type="submit"]'
-                );
+                    const target =
+                        document.querySelector(
+                            targetID
+                        );
 
 
-            if (submitButton) {
+                    if (target) {
 
-                setTimeout(function () {
+                        event.preventDefault();
 
-                    submitButton.disabled = true;
-
-                    submitButton.dataset.originalText =
-                        submitButton.textContent;
-
-                    if (submitButton.tagName === "BUTTON") {
-
-                        submitButton.textContent =
-                            "Sending...";
-
-                    } else {
-
-                        submitButton.value =
-                            "Sending...";
+                        target.scrollIntoView({
+                            behavior: "smooth"
+                        });
 
                     }
 
-                }, 50);
+                }
+            );
 
-            }
-
-        });
-
-    });
+        }
+    );
 
 
     // ==================================================
-    // 19. WELCOME MESSAGE
+    // 19. PREVENT DOUBLE SUBMISSION
+    // ==================================================
+
+    forms.forEach(
+        function (form) {
+
+            form.addEventListener(
+                "submit",
+                function () {
+
+                    const submitButton =
+                        form.querySelector(
+                            'button[type="submit"], input[type="submit"]'
+                        );
+
+
+                    if (submitButton) {
+
+                        setTimeout(
+                            function () {
+
+                                submitButton.disabled =
+                                    true;
+
+                                submitButton.dataset.originalText =
+                                    submitButton.textContent;
+
+
+                                if (
+                                    submitButton.tagName ===
+                                    "BUTTON"
+                                ) {
+
+                                    submitButton.textContent =
+                                        "Sending...";
+
+                                } else {
+
+                                    submitButton.value =
+                                        "Sending...";
+
+                                }
+
+                            },
+                            50
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    // ==================================================
+    // 20. WELCOME MESSAGE
     // ==================================================
 
     console.log(
