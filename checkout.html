@@ -408,7 +408,7 @@
                 </p>
 
                 <p>
-                    Designed by Abdul Wahab
+                    Designed by Abdul Wahah
                 </p>
 
             </div>
@@ -595,7 +595,6 @@
                     "submit",
                     async function (event) {
 
-                        // Stop normal form submission
                         event.preventDefault();
 
 
@@ -710,8 +709,13 @@
 
                             await paystack.checkout({
 
+                                // ==================================
+                                // LIVE PAYSTACK PUBLIC KEY
+                                // ==================================
+
                                 key:
-                                    "pk_test_82a4a1325a52f5cfab9e463e7a05a19ef95a2d05",
+                                    "pk_live_d759844b7b2e6d014a19aff60742c121973f48e6",
+
 
                                 email:
                                     customerEmail,
@@ -775,31 +779,117 @@
                                     ) {
 
                                         console.log(
-                                            "Payment successful:",
+                                            "Paystack payment successful:",
                                             transaction
                                         );
 
 
-                                        // Add payment reference
-
-                                        document.getElementById(
-                                            "orderDetails"
-                                        ).value =
-                                            orderDetails +
-                                            `\nPayment Reference: ${transaction.reference}`;
-
-
                                         // ==================================
-                                        // SEND ORDER TO FORMSPREE
+                                        // VERIFY PAYMENT WITH CLOUDFLARE
                                         // ==================================
 
-                                        const formData =
-                                            new FormData(
-                                                checkoutForm
-                                            );
+                                        payButton.textContent =
+                                            "⏳ Verifying payment...";
 
 
                                         try {
+
+                                            const verificationResponse =
+                                                await fetch(
+                                                    "https://bold-heart-3c93tasty-bites-payment.abdulwahabajose03.workers.dev",
+                                                    {
+                                                        method:
+                                                            "POST",
+
+                                                        headers: {
+                                                            "Content-Type":
+                                                                "application/json"
+                                                        },
+
+                                                        body:
+                                                            JSON.stringify({
+                                                                reference:
+                                                                    transaction.reference,
+
+                                                                amount:
+                                                                    amountInKobo
+                                                            })
+                                                    }
+                                                );
+
+
+                                            const verificationData =
+                                                await verificationResponse.json();
+
+
+                                            // ==================================
+                                            // VERIFICATION FAILED
+                                            // ==================================
+
+                                            if (
+                                                !verificationResponse.ok ||
+                                                !verificationData.success
+                                            ) {
+
+                                                console.error(
+                                                    "Payment verification failed:",
+                                                    verificationData
+                                                );
+
+
+                                                alert(
+                                                    "❌ Payment could not be verified.\n\n" +
+                                                    "Please do not make another payment yet.\n\n" +
+                                                    "Payment Reference: " +
+                                                    transaction.reference
+                                                );
+
+
+                                                payButton.disabled =
+                                                    false;
+
+
+                                                payButton.textContent =
+                                                    "💳 Pay Now with Paystack";
+
+
+                                                return;
+                                            }
+
+
+                                            // ==================================
+                                            // PAYMENT VERIFIED
+                                            // ==================================
+
+                                            console.log(
+                                                "Payment verified successfully:",
+                                                verificationData
+                                            );
+
+
+                                            // Add payment reference
+                                            // ONLY AFTER VERIFICATION
+
+                                            document.getElementById(
+                                                "orderDetails"
+                                            ).value =
+                                                orderDetails +
+                                                `\nPayment Reference: ${transaction.reference}`;
+
+
+                                            // ==================================
+                                            // SEND ORDER TO FORMSPREE
+                                            // ==================================
+
+                                            payButton.textContent =
+                                                "⏳ Sending your order...";
+
+
+                                            const formData =
+                                                new FormData(
+                                                    checkoutForm
+                                                );
+
 
                                             const response =
                                                 await fetch(
@@ -849,13 +939,14 @@
                                             else {
 
                                                 alert(
-                                                    "⚠️ Payment was successful, but the order notification could not be sent.\n\nPayment Reference: " +
+                                                    "⚠️ Payment was verified successfully, but the order notification could not be sent.\n\nPayment Reference: " +
                                                     transaction.reference
                                                 );
 
 
                                                 payButton.disabled =
                                                     false;
+
 
                                                 payButton.textContent =
                                                     "💳 Pay Now with Paystack";
@@ -864,21 +955,28 @@
 
                                         }
 
+
+                                        // ==================================
+                                        // CLOUDFLARE VERIFICATION ERROR
+                                        // ==================================
+
                                         catch (error) {
 
                                             console.error(
+                                                "Verification error:",
                                                 error
                                             );
 
 
                                             alert(
-                                                "⚠️ Payment was successful, but there was a problem sending your order.\n\nPayment Reference: " +
+                                                "⚠️ Your payment was received by Paystack, but we could not verify it right now.\n\nPlease contact Tasty Bites with your payment reference:\n\n" +
                                                 transaction.reference
                                             );
 
 
                                             payButton.disabled =
                                                 false;
+
 
                                             payButton.textContent =
                                                 "💳 Pay Now with Paystack";
@@ -902,6 +1000,7 @@
 
                                         payButton.disabled =
                                             false;
+
 
                                         payButton.textContent =
                                             "💳 Pay Now with Paystack";
@@ -930,6 +1029,7 @@
                                         payButton.disabled =
                                             false;
 
+
                                         payButton.textContent =
                                             "💳 Pay Now with Paystack";
 
@@ -938,6 +1038,11 @@
                             });
 
                         }
+
+
+                        // ==================================
+                        // GENERAL PAYMENT ERROR
+                        // ==================================
 
                         catch (error) {
 
@@ -954,6 +1059,7 @@
 
                             payButton.disabled =
                                 false;
+
 
                             payButton.textContent =
                                 "💳 Pay Now with Paystack";
