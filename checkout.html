@@ -408,7 +408,7 @@
                 </p>
 
                 <p>
-                    Designed by Abdul Wahah
+                    Designed by Abdul Wahab
                 </p>
 
             </div>
@@ -785,105 +785,28 @@
 
 
                                         // ==================================
-                                        // VERIFY PAYMENT WITH CLOUDFLARE
+                                        // PAYMENT SUCCESS
                                         // ==================================
 
                                         payButton.textContent =
-                                            "⏳ Verifying payment...";
+                                            "⏳ Sending your order...";
 
+
+                                        // Add payment reference
+                                        // AFTER PAYSTACK SUCCESS
+
+                                        document.getElementById(
+                                            "orderDetails"
+                                        ).value =
+                                            orderDetails +
+                                            `\nPayment Reference: ${transaction.reference}`;
+
+
+                                        // ==================================
+                                        // SEND ORDER TO FORMSPREE
+                                        // ==================================
 
                                         try {
-
-                                            const verificationResponse =
-                                                await fetch(
-                                                    "https://bold-heart-3c93tasty-bites-payment.abdulwahabajose03.workers.dev",
-                                                    {
-                                                        method:
-                                                            "POST",
-
-                                                        headers: {
-                                                            "Content-Type":
-                                                                "application/json"
-                                                        },
-
-                                                        body:
-                                                            JSON.stringify({
-                                                                reference:
-                                                                    transaction.reference,
-
-                                                                amount:
-                                                                    amountInKobo
-                                                            })
-                                                    }
-                                                );
-
-
-                                            const verificationData =
-                                                await verificationResponse.json();
-
-
-                                            // ==================================
-                                            // VERIFICATION FAILED
-                                            // ==================================
-
-                                            if (
-                                                !verificationResponse.ok ||
-                                                !verificationData.success
-                                            ) {
-
-                                                console.error(
-                                                    "Payment verification failed:",
-                                                    verificationData
-                                                );
-
-
-                                                alert(
-                                                    "❌ Payment could not be verified.\n\n" +
-                                                    "Please do not make another payment yet.\n\n" +
-                                                    "Payment Reference: " +
-                                                    transaction.reference
-                                                );
-
-
-                                                payButton.disabled =
-                                                    false;
-
-
-                                                payButton.textContent =
-                                                    "💳 Pay Now with Paystack";
-
-
-                                                return;
-                                            }
-
-
-                                            // ==================================
-                                            // PAYMENT VERIFIED
-                                            // ==================================
-
-                                            console.log(
-                                                "Payment verified successfully:",
-                                                verificationData
-                                            );
-
-
-                                            // Add payment reference
-                                            // ONLY AFTER VERIFICATION
-
-                                            document.getElementById(
-                                                "orderDetails"
-                                            ).value =
-                                                orderDetails +
-                                                `\nPayment Reference: ${transaction.reference}`;
-
-
-                                            // ==================================
-                                            // SEND ORDER TO FORMSPREE
-                                            // ==================================
-
-                                            payButton.textContent =
-                                                "⏳ Sending your order...";
-
 
                                             const formData =
                                                 new FormData(
@@ -939,7 +862,7 @@
                                             else {
 
                                                 alert(
-                                                    "⚠️ Payment was verified successfully, but the order notification could not be sent.\n\nPayment Reference: " +
+                                                    "⚠️ Payment was successful, but the order notification could not be sent.\n\nPayment Reference: " +
                                                     transaction.reference
                                                 );
 
@@ -957,19 +880,19 @@
 
 
                                         // ==================================
-                                        // CLOUDFLARE VERIFICATION ERROR
+                                        // FORMSPREE ERROR
                                         // ==================================
 
                                         catch (error) {
 
                                             console.error(
-                                                "Verification error:",
+                                                "Formspree Error:",
                                                 error
                                             );
 
 
                                             alert(
-                                                "⚠️ Your payment was received by Paystack, but we could not verify it right now.\n\nPlease contact Tasty Bites with your payment reference:\n\n" +
+                                                "⚠️ Payment was successful, but we could not send your order details.\n\nPayment Reference: " +
                                                 transaction.reference
                                             );
 
